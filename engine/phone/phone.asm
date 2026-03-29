@@ -425,8 +425,9 @@ WrongNumber:
 	writetext .PhoneWrongNumberText
 	end
 .PhoneWrongNumberText:
-	text_far _PhoneWrongNumberText
-	text_end
+	text "あれっ？"
+	line "すいません　まちがえました<⋯>"
+	done
 
 Script_ReceivePhoneCall:
 	reanchormap
@@ -545,8 +546,8 @@ HangUp_Beep:
 	ret
 
 PhoneClickText:
-	text_far _PhoneClickText
-	text_end
+	text "ピッ！"
+	done
 
 HangUp_BoopOn:
 	ld hl, PhoneEllipseText
@@ -554,8 +555,8 @@ HangUp_BoopOn:
 	ret
 
 PhoneEllipseText:
-	text_far _PhoneEllipseText
-	text_end
+	text "<⋯>"
+	done
 
 HangUp_BoopOff:
 	call SpeechTextbox
@@ -582,7 +583,7 @@ Phone_Wait20Frames:
 Phone_TextboxWithName:
 	push bc
 	call Phone_CallerTextbox
-	hlcoord 1, 1
+	hlcoord 1, 2
 	ld [hl], '☎'
 	inc hl
 	inc hl
@@ -641,11 +642,9 @@ GetCallerName:
 	push hl
 	push bc
 	call PlaceString
-	ld a, ':'
-	ld [bc], a
 	pop bc
 	pop hl
-	ld de, SCREEN_WIDTH + 3
+	ld de, 6
 	add hl, de
 	call Phone_GetTrainerClassName
 	call PlaceString
@@ -663,8 +662,6 @@ GetCallerName:
 	ld d, [hl]
 	pop hl
 	call PlaceString
-	ld a, ':'
-	ld [bc], a
 	ret
 
 INCLUDE "data/phone/non_trainer_names.asm"
@@ -715,21 +712,23 @@ PhoneOutOfAreaScript:
 	end
 
 PhoneOutOfAreaText:
-	text_far _PhoneOutOfAreaText
-	text_end
+	text "<⋯>つながらない！"
+	line "けんがいに　いるみたいだ<⋯>"
+	done
 
 PhoneScript_JustTalkToThem:
 	writetext PhoneJustTalkToThemText
 	end
 
 PhoneJustTalkToThemText:
-	text_far _PhoneJustTalkToThemText
-	text_end
+	text "ちかくに　いるんだから"
+	line "ちょくせつ　はなそうよ！"
+	done
 
 PhoneThankYouTextScript: ; unreferenced
 	writetext PhoneThankYouText
 	end
 
 PhoneThankYouText:
-	text_far _PhoneThankYouText
-	text_end
+	text "ありがとう！"
+	done

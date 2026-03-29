@@ -24,7 +24,7 @@ gfx/pokedex/pokedex.2bpp.lz: LZFLAGS += --method 2 --align 4
 gfx/pokedex/question_mark.2bpp.lz: LZFLAGS += --align 4
 gfx/pokedex/slowpoke.2bpp.lz: LZFLAGS += --method 2 --align 1
 
-gfx/pokegear/pokegear.2bpp.lz: LZFLAGS = --compressor null --method 1 --align 1
+gfx/pokegear/pokegear.2bpp.lz: LZFLAGS += --align 4
 gfx/pokegear/pokegear_sprites.2bpp.lz: LZFLAGS += --align 4
 gfx/pokegear/town_map.2bpp.lz: LZFLAGS = --compressor null --method 1 --align 1
 

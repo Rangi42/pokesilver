@@ -120,7 +120,7 @@ Pokegear_LoadGFX:
 	ld hl, PokegearGFX
 	ld de, vTiles2 tile $30
 	ld a, BANK(PokegearGFX)
-	call FarDecompress
+	call Decompress
 	ld hl, PokegearSpritesGFX
 	ld de, vTiles0
 	ld a, BANK(PokegearSpritesGFX)
@@ -312,7 +312,7 @@ InitPokegearTilemap:
 	ret
 
 .switch
-	db "SWITCH▶@"
+	db "きりかえ　▶@"
 
 .Map:
 	ld a, [wPokegearMapPlayerIconLandmark]
@@ -328,14 +328,6 @@ InitPokegearTilemap:
 	ld e, 1
 .ok
 	farcall PokegearMap
-	ld a, $07
-	ld bc, SCREEN_WIDTH - 2
-	hlcoord 1, 2
-	call ByteFill
-	hlcoord 0, 2
-	ld [hl], $06
-	hlcoord 19, 2
-	ld [hl], $17
 	ld a, [wPokegearMapCursorLandmark]
 	call PokegearMap_UpdateLandmarkName
 	ret
@@ -415,7 +407,7 @@ Pokegear_FinishTilemap:
 	ld [hli], a
 	inc a
 	ld [hld], a
-	ld bc, $14
+	ld bc, SCREEN_WIDTH
 	add hl, bc
 	add $f
 	ld [hli], a
@@ -502,22 +494,43 @@ Pokegear_UpdateClock:
 	hlcoord 3, 5
 	lb bc, 5, 14
 	call ClearBox
-	ldh a, [hHours]
-	ld b, a
-	ldh a, [hMinutes]
-	ld c, a
-	decoord 6, 8
-	farcall PrintHoursMins
+	call GetAMPMHours
+	jr c, .pm
+	ld de, .AMString
+	jr .print_am_pm
+.pm
+	ld de, .PMString
+.print_am_pm
+	hlcoord 4, 8
+	call PlaceString
+	hlcoord 10, 7
+	ld [hl], '゛'
+	ld de, wTempByteValue
+	hlcoord 8, 8
+	lb bc, 1, 2
+	call PrintNum
+	ld a, 'し'
+	ld [hli], a
+	inc hl
+	ld de, hMinutes
+	lb bc, PRINTNUM_LEADINGZEROS | 1, 2
+	call PrintNum
+	ld a, 'ふ'
+	ld [hli], a
+	ld [hl], 'ん'
 	ld hl, .GearTodayText
 	bccoord 6, 6
 	call PrintTextboxTextAt
 	ret
 
+.AMString:
 	db "ごぜん@"
+
+.PMString:
 	db "ごご@"
 
 .GearTodayText:
-	text_far _GearTodayText
+	text_today
 	text_end
 
 PokegearMap_CheckRegion:
@@ -685,15 +698,23 @@ PokegearMap_InitCursor:
 PokegearMap_UpdateLandmarkName:
 	push af
 	hlcoord 8, 0
-	lb bc, 2, 12
+	lb bc, 3, 12
 	call ClearBox
+	hlcoord 8, 0
+	ld [hl], $30
+	hlcoord 19, 0
+	ld [hl], $31
+	hlcoord 8, 2
+	ld [hl], $32
+	hlcoord 19, 2
+	ld [hl], $33
 	pop af
 	ld e, a
-	push de
 	farcall GetLandmarkName
-	pop de
-	farcall TownMap_ConvertLineBreakCharacters
-	hlcoord 8, 0
+	hlcoord 9, 1
+	ld de, wStringBuffer1
+	call PlaceString
+	hlcoord 19, 1
 	ld [hl], $34
 	ret
 
@@ -914,12 +935,12 @@ PokegearPhone_MakePhoneCall:
 	ret
 
 .GearEllipseText:
-	text_far _GearEllipseText
-	text_end
+	text "⋯⋯"
+	done
 
 .GearOutOfServiceText:
-	text_far _GearOutOfServiceText
-	text_end
+	text "ここは　けんがい　みたいだ⋯⋯"
+	prompt
 
 PokegearPhone_FinishPhoneCall:
 	ldh a, [hJoyPressed]
@@ -989,7 +1010,7 @@ PokegearPhone_GetDPad:
 	ret
 
 PokegearPhone_UpdateCursor:
-	ld a, ' '
+	ld a, '　'
 for y, PHONE_DISPLAY_HEIGHT
 	hlcoord 1, 4 + y * 2
 	ld [hl], a
@@ -1004,7 +1025,7 @@ endr
 PokegearPhone_UpdateDisplayList:
 	hlcoord 1, 3
 	ld b, PHONE_DISPLAY_HEIGHT * 2 + 1
-	ld a, ' '
+	ld a, '　'
 .row
 	ld c, SCREEN_WIDTH - 2
 .col
@@ -1216,7 +1237,7 @@ PokegearPhoneContactSubmenu:
 	ld a, [de]
 	ld c, a
 	push hl
-	ld a, ' '
+	ld a, '　'
 	ld de, SCREEN_WIDTH * 2
 .clear_column
 	ld [hl], a
@@ -1225,7 +1246,7 @@ PokegearPhoneContactSubmenu:
 	jr nz, .clear_column
 	pop hl
 	ld a, [wPokegearPhoneSubmenuCursor]
-	ld bc, SCREEN_WIDTH  * 2
+	ld bc, SCREEN_WIDTH * 2
 	call AddNTimes
 	ld [hl], '▶'
 	pop de
@@ -1234,9 +1255,9 @@ PokegearPhoneContactSubmenu:
 .CallDeleteCancelStrings:
 	dwcoord 10, 6
 	db 3
-	db   "CALL"
-	next "DELETE"
-	next "CANCEL"
+	db   "でんわ　する"
+	next "さくじょ　する"
+	next "やめる"
 	db   "@"
 
 .CallDeleteCancelJumptable:
@@ -1247,15 +1268,15 @@ PokegearPhoneContactSubmenu:
 .CallCancelStrings:
 	dwcoord 10, 8
 	db 2
-	db   "CALL"
-	next "CANCEL"
+	db   "でんわ　する"
+	next "やめる"
 	db   "@"
 
 .CallCancelJumptable:
 	dw .Call
 	dw .Cancel
 
-GetAMPMHours: ; unreferenced
+GetAMPMHours:
 	ldh a, [hHours]
 	cp NOON_HOUR
 	jr c, .am
@@ -1325,16 +1346,21 @@ Pokegear_LoadTilemapRLE:
 	jr .loop
 
 PokegearAskWhoCallText:
-	text_far _PokegearAskWhoCallText
-	text_end
+	text "だれ　に"
+	line "でんわ　を　かけますか？"
+	done
 
 PokegearPressButtonText:
-	text_far _PokegearPressButtonText
-	text_end
+	text "ボタンを　おすと"
+	line "ポケギアを　しゅうりょうします"
+	done
 
 PokegearAskDeleteText:
-	text_far _PokegearAskDeleteText
-	text_end
+	text "ほんとうに　さくじょ　しますか？"
+	done
+
+PokegearGFX:
+INCBIN "gfx/pokegear/pokegear.2bpp.lz"
 
 PokegearSpritesGFX:
 INCBIN "gfx/pokegear/pokegear_sprites.2bpp.lz"
@@ -1695,15 +1721,15 @@ NoRadioStation:
 	ldh [hBGMapMode], a
 	ret
 
-OaksPKMNTalkName:     db "OAK's <PK><MN> Talk@"
-PokedexShowName:      db "#DEX Show@"
-PokemonMusicName:     db "#MON Music@"
-LuckyChannelName:     db "Lucky Channel@"
-UnownStationName:     db "?????@"
+OaksPKMNTalkName:     db "オーキドはかせの　#こうざ@"
+PokedexShowName:      db "よくわかる　#ずかん@"
+PokemonMusicName:     db "#ミュージック@"
+LuckyChannelName:     db "ラッキーチャンネル@"
+UnownStationName:     db "？？？？？@"
 
-PlacesAndPeopleName:  db "Places & People@"
-LetsAllSingName:      db "Let's All Sing!@"
-PokeFluteStationName: db "# FLUTE@"
+PlacesAndPeopleName:  db "あのまち　このひと@"
+LetsAllSingName:      db "みんなで　うたおう！@"
+PokeFluteStationName: db "#のふえ@"
 
 _TownMap:
 	ld hl, wOptions
@@ -1850,24 +1876,6 @@ _TownMap:
 	ld e, KANTO_REGION
 .okay_tilemap
 	farcall PokegearMap
-	ld a, $07
-	ld bc, 6
-	hlcoord 1, 0
-	call ByteFill
-	hlcoord 0, 0
-	ld [hl], $06
-	hlcoord 7, 0
-	ld [hl], $17
-	hlcoord 7, 1
-	ld [hl], $16
-	hlcoord 7, 2
-	ld [hl], $26
-	ld a, $07
-	ld bc, NAME_LENGTH
-	hlcoord 8, 2
-	call ByteFill
-	hlcoord 19, 2
-	ld [hl], $17
 	ld a, [wTownMapCursorLandmark]
 	call PokegearMap_UpdateLandmarkName
 	farcall TownMapPals
@@ -1924,13 +1932,13 @@ PlayRadio:
 	lb bc, 4, 18
 	call Textbox
 	hlcoord 1, 14
-	ld [hl], '“'
+	ld [hl], '「'
 	pop de
 	hlcoord 2, 14
 	call PlaceString
 	ld h, b
 	ld l, c
-	ld [hl], '”'
+	ld [hl], '」'
 	call WaitBGMap
 	ret
 
@@ -2093,7 +2101,7 @@ TownMapBubble:
 	ld [hli], a
 ; Top row
 	ld bc, 16
-	ld a, ' '
+	ld a, '　'
 	call ByteFill
 ; Top-right corner
 	ld a, $31
@@ -2102,7 +2110,7 @@ TownMapBubble:
 
 ; Middle row
 	ld bc, SCREEN_WIDTH - 2
-	ld a, ' '
+	ld a, '　'
 	call ByteFill
 
 ; Bottom-left corner
@@ -2111,14 +2119,14 @@ TownMapBubble:
 	ld [hli], a
 ; Bottom row
 	ld bc, 16
-	ld a, ' '
+	ld a, '　'
 	call ByteFill
 ; Bottom-right corner
 	ld a, $33
 	ld [hl], a
 
 ; Print "Where?"
-	hlcoord 2, 0
+	hlcoord 2, 1
 	ld de, .Where
 	call PlaceString
 ; Print the name of the default flypoint
@@ -2129,7 +2137,7 @@ TownMapBubble:
 	ret
 
 .Where:
-	db "Where?@"
+	db "どこへ？@"
 
 .Name:
 ; We need the map location of the default flypoint
@@ -2141,7 +2149,7 @@ TownMapBubble:
 	add hl, de
 	ld e, [hl]
 	farcall GetLandmarkName
-	hlcoord 2, 1
+	hlcoord 8, 1
 	ld de, wStringBuffer1
 	call PlaceString
 	ret
@@ -2401,27 +2409,32 @@ Pokedex_GetArea:
 
 .PlaceString_MonsNest:
 	hlcoord 0, 0
-	ld bc, SCREEN_WIDTH
-	ld a, ' '
+	ld bc, 11
+	ld a, '　'
 	call ByteFill
+	ld [hl], $06
 	hlcoord 0, 1
+	ld bc, 11
+	ld a, '　'
+	call ByteFill
+	ld [hl], $16
+	hlcoord 0, 2
 	ld a, $06
 	ld [hli], a
-	ld bc, SCREEN_WIDTH - 2
+	ld bc, 10
 	ld a, $07
 	call ByteFill
-	ld [hl], $17
+	ld [hl], $27
 	call GetPokemonName
-	hlcoord 2, 0
+	hlcoord 1, 1
 	call PlaceString
-	ld h, b
-	ld l, c
+	hlcoord 6, 1
 	ld de, .String_SNest
 	call PlaceString
 	ret
 
 .String_SNest:
-	db "'S NEST@"
+	db "の　すみか@"
 
 .GetAndPlaceNest:
 	ld [wTownMapCursorLandmark], a

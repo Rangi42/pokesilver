@@ -63,9 +63,3 @@ INCBIN "gfx/pokemon/egg/egg.2bpp.lz"
 ;INCBIN "gfx/new_game/shrink1.2bpp.lz"
 ;Shrink2Pic::
 ;INCBIN "gfx/new_game/shrink2.2bpp.lz"
-
-
-;SECTION "Pokégear GFX", ROMX
-
-;PokegearGFX::
-;INCBIN "gfx/pokegear/pokegear.2bpp.lz"

@@ -45,6 +45,12 @@ MACRO drs
 	dr \1StdScript, (\2) * 3 + $4000
 ENDM
 
+; Phone scripts
+MACRO drc
+	dr \1CalleeScript, \2
+	dr \1CallerScript, \3
+ENDM
+
 
 EXPORT DEF SCENE_NEWBARKTOWN_NOOP EQU 1
 EXPORT DEF SCENE_ROUTE29_CATCH_TUTORIAL EQU 1
@@ -55,29 +61,6 @@ EXPORT DEF SCENE_ROUTE32_OFFER_SLOWPOKETAIL EQU 1
 INCLUDE "main.asm"
 	set_gs_diff 0
 
-
-SECTION "rom36", ROMX[$4000], BANK[36]
-; ROM $24 : $90000 - $93FFF
-
-	dr GetCallerLocation, $441f
-	dr InitClock, $4677
-	dr SetDayOfWeek, $494b
-	dr PrintHour, $4a86
-	dr PokeGear, $4ada
-	dr AnimatePokegearModeIndicatorArrow, $4c87
-	dr AnimateTuningKnob, $5768
-	dr _TownMap, $59e1
-	dr PlayRadio, $5ae9
-	dr PokegearMap, $5b77
-	dr _FlyMap, $5b89
-	dr Pokedex_GetArea, $5da5
-	dr RegionCheck, $689d
-	dr Fish, $68c9
-	dr _SlotMachine, $6b85
-	dr Slots_AnimateGolem, $7708
-	dr Slots_AnimateChansey, $7797
-
-	dr
 
 SECTION "rom37", ROMX[$4000], BANK[37]
 ; ROM $25 : $94000 - $97FFF
@@ -143,6 +126,7 @@ SECTION "rom46", ROMX[$6300], BANK[46]
 	dr CheckForHiddenItems, $6300
 	dr TreeMonEncounter, $6378
 	dr RockMonEncounter, $63a1
+	dr PlayRadioShow, $65bd
 	dr ReadPartyMonMail, $7258
 	dr ReadAnyMail, $7266
 	dr ItemIsMail, $7e63
@@ -189,6 +173,7 @@ DummyPredef39::
 	dr PlayBattleAnim, $40e5
 	dr BattleAnimCmd_RaiseSub, $45e7
 	dr BattleAnimCmd_MinimizeOpp, $466c
+	dr BattleAnim_Sine_e, $667e
 
 	dr
 
@@ -233,6 +218,40 @@ StdScripts::
 	drs ReceiveTogepiEggScript, $2a
 	drs PCScript, $2b
 	drs GameCornerCoinVendorScript, $2c
+	dr UnusedPhoneScript, $4cb2
+	dr MomPhoneCalleeScript, $4cbc
+	dr MomPhoneLectureScript, $4dcb
+	drc BillPhone, $4dde, $4e19
+	drc ElmPhone, $4e1e, $4e88
+	drc JackPhone, $4ed1, $4edb
+	drc BeverlyPhone, $4efd, $4f07
+	drc HueyPhone, $4f29, $4f33
+	drc GavenPhone, $4f4e, $4f58
+	drc BethPhone, $4f7a, $4f84
+	drc JosePhone, $4fa6, $4fb0
+	drc ReenaPhone, $4fd9, $4fe3
+	drc JoeyPhone, $5005, $500f
+	drc WadePhone, $5037, $505c
+	drc RalphPhone, $509f, $50a9
+	drc LizPhone, $50ed, $50f7
+	drc AnthonyPhone, $511f, $5129
+	drc ToddPhone, $516b, $5175
+	drc GinaPhone, $519d, $51ad
+	drc IrwinPhone, $51db, $51eb
+	drc ArniePhone, $5213, $521d
+	drc AlanPhone, $5259, $5263
+	drc DanaPhone, $5285, $528f
+	drc ChadPhone, $52b1, $52bb
+	drc DerekPhone, $52f7, $531c
+	drc ChrisPhone, $5359, $5363
+	drc BrentPhone, $5385, $538f
+	drc TiffanyPhone, $53b8, $53c2
+	drc VancePhone, $53eb, $53f5
+	drc WiltonPhone, $5417, $5421
+	drc KenjiPhone, $545f, $5469
+	drc ParryPhone, $548b, $5495
+	drc ErinPhone, $54d1, $54db
+	dr BikeShopPhoneCallerScript, $5700
 
 	dr
 
@@ -327,6 +346,7 @@ SECTION "rom62", ROMX[$4000], BANK[62]
 	dr EnemyHPBarBorderGFX, $4bb2
 	dr HPExpBarBorderGFX, $4bd2
 	dr ExpBarGFX, $4c02
+	dr TownMapGFX, $4c92
 	dr Footprints, $519a
 	dr UnownFont, $719a
 	dr CollisionPermissionTable, $734a

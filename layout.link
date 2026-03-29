@@ -121,9 +121,9 @@ ROMX $21
 ROMX $22
 	"Map Scripts 2"
 ROMX $23
-	; "bank23"
+	"bank23"
 ROMX $24
-	; "bank24"
+	"bank24"
 ROMX $25
 	; "Maps"
 	; "Events"
@@ -220,7 +220,6 @@ ROMX $3f
 ; ROMX $70
 ; 	"bank70"
 ; 	"bank70_2"
-; 	"Pokégear GFX"
 ; ROMX $7f
 ; 	org $7df8
 ; 	"Stadium 2 Checksums"

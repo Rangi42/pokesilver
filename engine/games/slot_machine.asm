@@ -109,7 +109,7 @@ _SlotMachine:
 	call DisableLCD
 	hlbgcoord 0, 0
 	ld bc, vBGMap1 - vBGMap0
-	ld a, ' '
+	ld a, '　'
 	call ByteFill
 	ld b, SCGB_SLOT_MACHINE
 	call GetSGBLayout
@@ -241,13 +241,13 @@ DebugPrintSlotBias: ; unreferenced
 	daa
 	ld e, a
 	and $f
-	add '0'
+	add '０'
 	hlcoord 1, 0
 	ld [hl], a
 	ld a, e
 	swap a
 	and $f
-	add '0'
+	add '０'
 	hlcoord 0, 0
 	ld [hl], a
 	ret
@@ -1762,16 +1762,17 @@ Slots_AskBet:
 	ret
 
 .SlotsBetHowManyCoinsText:
-	text_far _SlotsBetHowManyCoinsText
-	text_end
+	text "コインを"
+	line "なんまい　かけますか？"
+	done
 
 .SlotsStartText:
-	text_far _SlotsStartText
-	text_end
+	text "スタート！"
+	done
 
 .SlotsNotEnoughCoinsText:
-	text_far _SlotsNotEnoughCoinsText
-	text_end
+	text "コインが　たりません！"
+	prompt
 
 .MenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -1782,9 +1783,9 @@ Slots_AskBet:
 .MenuData:
 	db STATICMENU_CURSOR ; flags
 	db 3 ; items
-	db " 3@"
-	db " 2@"
-	db " 1@"
+	db "３まい@"
+	db "２まい@"
+	db "１まい@"
 
 Slots_AskPlayAgain:
 	ld hl, wCoins
@@ -1816,12 +1817,14 @@ Slots_AskPlayAgain:
 	ret
 
 .SlotsRanOutOfCoinsText:
-	text_far _SlotsRanOutOfCoinsText
-	text_end
+	text "コインが"
+	line "なくなっちゃった<⋯>"
+	done
 
 .SlotsPlayAgainText:
-	text_far _SlotsPlayAgainText
-	text_end
+	text "もう　１かい"
+	line "あそびますか？"
+	done
 
 Slots_GetPayout:
 	ld a, [wSlotMatched]
@@ -1888,12 +1891,12 @@ Slots_PayoutText:
 
 .PayoutStrings:
 	table_width 6
-	dbw "300@", .LinedUpSevens      ; SLOTS_SEVEN
-	dbw "50@@", .LinedUpPokeballs   ; SLOTS_POKEBALL
-	dbw "6@@@", .LinedUpMonOrCherry ; SLOTS_CHERRY
-	dbw "8@@@", .LinedUpMonOrCherry ; SLOTS_PIKACHU
-	dbw "10@@", .LinedUpMonOrCherry ; SLOTS_SQUIRTLE
-	dbw "15@@", .LinedUpMonOrCherry ; SLOTS_STARYU
+	dbw "３００@", .LinedUpSevens      ; SLOTS_SEVEN
+	dbw "５０@@",  .LinedUpPokeballs   ; SLOTS_POKEBALL
+	dbw "６@@@",   .LinedUpMonOrCherry ; SLOTS_CHERRY
+	dbw "８@@@",   .LinedUpMonOrCherry ; SLOTS_PIKACHU
+	dbw "１０@@",  .LinedUpMonOrCherry ; SLOTS_SQUIRTLE
+	dbw "１５@@",  .LinedUpMonOrCherry ; SLOTS_STARYU
 	assert_table_length NUM_SLOT_REELS
 
 .Text_PrintPayout:
@@ -1916,12 +1919,15 @@ endr
 	ret
 
 .SlotsLinedUpText:
-	text_far _SlotsLinedUpText
-	text_end
+	text "が　そろった！"
+	line "コイン　@"
+	text_ram wStringBuffer2
+	text "まい　いただき！"
+	done
 
 .SlotsDarnText:
-	text_far _SlotsDarnText
-	text_end
+	text "はずれー"
+	done
 
 .LinedUpSevens:
 	ld a, SFX_2ND_PLACE
