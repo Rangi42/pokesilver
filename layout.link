@@ -126,7 +126,9 @@ ROMX $24
 	"bank24"
 ROMX $25
 	; "Maps"
-	; "Events"
+	org $65f9
+	"Events"
+	; "Garbage 37"
 ROMX $26
 	; "Title Screen"
 ROMX $2a
@@ -238,7 +240,6 @@ WRAM0
 	"Video"
 WRAMX 1
 	"WRAM 1"
-	org $d1b3
 	"Game Data"
 	"Party"
 ; 	"Stack"

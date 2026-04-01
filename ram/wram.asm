@@ -2232,12 +2232,17 @@ wReceiveCallDelay_StartTime:: ds 3
 
 wBugContestMinsRemaining:: db
 wBugContestSecsRemaining:: db
-/*
+
 	ds 2
 
 wMapStatusEnd::
 
 	ds 2
+
+; used only in _ResetWRAM
+wGameEngineEnd::
+
+	ds 32
 
 wOptions::
 ; bit 0-2: number of frames to delay when printing text
@@ -2273,7 +2278,7 @@ wOptions2::
 	ds 2
 
 wOptionsEnd::
-*/
+
 
 SECTION "Game Data", WRAMX
 

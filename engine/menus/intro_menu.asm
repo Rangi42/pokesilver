@@ -21,7 +21,7 @@ ResetWRAM:
 
 _ResetWRAM:
 	ld hl, wShadowOAM
-	ld bc, wNewGameResetWIP - wShadowOAM
+	ld bc, wGameEngineEnd - wShadowOAM
 	xor a
 	call ByteFill
 

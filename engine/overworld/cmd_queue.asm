@@ -148,7 +148,7 @@ CmdQueues_IncAnonJumptableIndex:
 	inc [hl]
 	ret
 
-CmdQueues_DecAnonJumptableIndex: ; unreferenced
+CmdQueues_DecAnonJumptableIndex:
 	ld hl, CMDQUEUE_JUMPTABLE_INDEX
 	add hl, bc
 	dec [hl]
@@ -206,6 +206,51 @@ CmdQueue_Type4:
 	ret
 
 CmdQueue_Type3:
+	call CmdQueues_AnonJumptable
+.anon_dw
+	dw .zero
+	dw .one
+	dw .two
+
+.zero
+	call Function97d8d
+	jr z, .asm_97d81
+	call CmdQueues_IncAnonJumptableIndex
+
+.one
+	call Function97d8d
+	jr z, .asm_97d81
+	call CmdQueues_IncAnonJumptableIndex
+	ld hl, CMDQUEUE_02
+	add hl, bc
+	ld a, [hl]
+	ld [wcebd], a
+	ret
+
+.two
+	call Function97d8d
+	jr z, .asm_97d81
+	call CmdQueues_DecAnonJumptableIndex
+	ld hl, CMDQUEUE_03
+	add hl, bc
+	ld a, [hl]
+	ld [wcebd], a
+	ret
+
+.asm_97d81
+	ld a, $7f
+	ld [wcebd], a
+	ld hl, CMDQUEUE_JUMPTABLE_INDEX
+	add hl, bc
+	ld [hl], 0
+	ret
+
+Function97d8d:
+	push bc
+	ld bc, wPlayerStruct
+	call GetSpriteDirection
+	and a
+	pop bc
 	ret
 
 CmdQueue_StoneTable:

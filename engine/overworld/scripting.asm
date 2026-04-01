@@ -454,8 +454,11 @@ GiveItemScript:
 	end
 
 .ReceivedItemText:
-	text_far _ReceivedItemText
-	text_end
+	text "<PLAYER>は"
+	line "@"
+	text_ram wStringBuffer4
+	text "を　もらった！"
+	done
 
 Script_itemnotify:
 	call GetPocketName
@@ -511,12 +514,20 @@ CurItemName:
 	ret
 
 PutItemInPocketText:
-	text_far _PutItemInPocketText
-	text_end
+	text "<PLAYER>は　@"
+	text_ram wStringBuffer1
+	text "を"
+	line "@"
+	text_ram wStringBuffer3
+	text "に　しまった！"
+	prompt
 
 PocketIsFullText:
-	text_far _PocketIsFullText
-	text_end
+	text "ざんねん！"
+	line "@"
+	text_ram wStringBuffer3
+	text "が　いっぱい<⋯>"
+	prompt
 
 Script_pokemart:
 	call GetScriptByte
@@ -1559,7 +1570,7 @@ Script_getnum:
 
 ResetStringBuffer1:
 	ld hl, wStringBuffer1
-	ld bc, MOVE_NAME_LENGTH
+	ld bc, STRING_BUFFER_LENGTH
 	ld a, '@'
 	call ByteFill
 	ret
