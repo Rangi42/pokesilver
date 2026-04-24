@@ -25,18 +25,16 @@ CherrygroveEvolutionSpeechHouseBookshelf:
 	jumpstd MagazineBookshelfScript
 
 CherrygroveEvolutionSpeechHouseYoungsterText:
-	text "#MON gain expe-"
-	line "rience in battle"
-
-	para "and change their"
-	line "form."
+	text "#<TTE>"
+	line "たたか<TTE>いると　けいけん　つんで"
+	cont "すがたかたち<GA>かわっちゃうんだよ"
 	done
 
 CherrygroveEvolutionSpeechHouseLassText:
-	text "#MON change?"
+	text "#　すがた　かわっちゃうの？"
 
-	para "I would be shocked"
-	line "if one did that!"
+	para "いきなり　かわったら"
+	line "ビックリ　しちゃうわね！"
 	done
 
 CherrygroveEvolutionSpeechHouse_MapEvents:

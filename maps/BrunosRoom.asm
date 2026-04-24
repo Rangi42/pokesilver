@@ -79,47 +79,35 @@ BrunosRoom_EnterMovement:
 	step_end
 
 BrunoScript_BrunoBeforeText:
-	text "I am BRUNO of the"
-	line "ELITE FOUR."
+	text "おれ<WA>してんのう<NO>シバ！"
 
-	para "I always train to"
-	line "the extreme be-"
-	cont "cause I believe in"
-	cont "our potential."
+	para "おれ<WA>じぶんたち<GA>も<TTE>いる"
+	line "かのうせい<WO>しんじて"
+	cont "いつも　げんかいまで　きたえている"
 
-	para "That is how we"
-	line "became strong."
+	para "そうして　つよくなった"
+	line "おれたち<NI>かなうと　おもうか？"
 
-	para "Can you withstand"
-	line "our power?"
+	para "ほう　おそれ<WA>なさそうだな"
+	line "いい　かお<WO>してる"
+	cont "それでこそ　たたかう<NI>ふさわしい"
 
-	para "Hm? I see no fear"
-	line "in you. You look"
+	para "いくぞ！　<PLAYER>とやら"
+	line "おれたち<NO>ハイパー　パワー"
+	cont "うけてみる<GA>いい！"
 
-	para "determined. Per-"
-	line "fect for battle!"
-
-	para "Ready, <PLAYER>?"
-	line "You will bow down"
-
-	para "to our overwhelm-"
-	line "ing power!"
-
-	para "Hoo hah!"
+	para "ウー！　ハーッ！"
 	done
 
 BrunoScript_BrunoBeatenText:
-	text "Why? How could we"
-	line "lose?"
+	text "どうした　ことだ！"
+	line "<⋯>　おれたち<GA>まけるとは！"
 	done
 
 BrunoScript_BrunoDefeatText:
-	text "Having lost, I"
-	line "have no right to"
-	cont "say anything…"
-
-	para "Go face your next"
-	line "challenge!"
+	text "まけた　おれに"
+	line "なにも　いう　しかく<WA>ない！"
+	cont "つぎ<NO>へや<NI>すすむ<GA>いい！"
 	done
 
 BrunosRoom_MapEvents:

@@ -13,16 +13,14 @@ GuideGentsHouseBookshelf:
 	jumpstd MagazineBookshelfScript
 
 GuideGentsHouseGuideGentText:
-	text "When I was a wee"
-	line "lad, I was a hot-"
-	cont "shot trainer!"
+	text "わしも　わかいころは"
+	line "ばりばり<NO><TRAINER>　じゃっ<TA!>"
 
-	para "Here's a word of"
-	line "advice: Catch lots"
-	cont "of #MON!"
+	para "そんな　わしから　アドバイス！"
+	line "#<WA>いっぱい　つかまえろ！"
 
-	para "Treat them all"
-	line "with kindness!"
+	para "そして　やさしさ<WO>も<TTE>"
+	line "#<NI>せっして　やるのじゃ！"
 	done
 
 GuideGentsHouse_MapEvents:

@@ -14,15 +14,13 @@ Route31VioletGateCooltrainerFScript:
 	jumptextfaceplayer Route31VioletGateCooltrainerFText
 
 Route31VioletGateOfficerText:
-	text "Hi, guy!"
-	line "Did you visit"
-	cont "SPROUT TOWER?"
+	text "おっ　しょうねん"
+	line "マダツボミのとう<NO>けんがく　した？"
 	done
 
 Route31VioletGateCooltrainerFText:
-	text "I came too far"
-	line "out. I'd better"
-	cont "phone home!"
+	text "ずいぶんと　とおく<NI>きちゃっ<TA!>"
+	line "おうち<NI>でんわ　しようっと！"
 	done
 
 Route31VioletGate_MapEvents:

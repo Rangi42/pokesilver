@@ -148,213 +148,176 @@ AzaleaGymStatue:
 	jumpstd GymStatue2Script
 
 BugsyText_INeverLose:
-	text "I'm BUGSY!"
-	line "I never lose when"
+	text "ぼく　ツクシ！"
+	line "むし#<NO>ことなら"
+	cont "だれにも　まけないよ！"
 
-	para "it comes to bug"
-	line "#MON."
+	para "なんた<TTE>　しょうらいは"
+	line "むし#　けんきゅうで"
+	cont "えらい　はかせ<NI>なるんだから！"
 
-	para "My research is"
-	line "going to make me"
-
-	para "the authority on"
-	line "bug #MON!"
-
-	para "Let me demonstrate"
-	line "what I've learned"
-	cont "from my studies."
+	para "というわけで　ぼくの"
+	line "けんきゅう<NO>せいか　みせてあげるよ"
 	done
 
 BugsyText_ResearchIncomplete:
-	text "Whoa, amazing!"
-	line "You're an expert"
-	cont "on #MON!"
+	text "うわ　すごい！"
+	line "きみ　#<NI>くわしいんだね！"
 
-	para "My research isn't"
-	line "complete yet."
+	para "あーあ"
+	line "ぼく<NO>けんきゅうも　まだまだだ！"
 
-	para "OK, you win. Take"
-	line "this BADGE."
+	para "うん！　わかったよ"
+	line "こ<NO>バッジ<WO>も<TTE>い<TTE>よ！"
 	done
 
 Text_ReceivedHiveBadge:
-	text "<PLAYER> received"
-	line "HIVEBADGE."
+	text "<PLAYER><WA>ツクシから"
+	line "インセクトバッジ<WO>もらっ<TA!>"
 	done
 
 BugsyText_HiveBadgeSpeech:
-	text "Do you know the"
-	line "benefits of HIVE-"
-	cont "BADGE?"
+	text "インセクトバッジの"
+	line "こうか<WA>し<TTE>る？"
 
-	para "If you have it,"
-	line "#MON up to L30"
-	cont "will obey you."
+	para "インセクトバッジをね　つけてると"
+	line "ひとから　もらった　#でも"
+	cont "レベル　３０まで<NO>#が"
+	cont "すなお<NI>なるよ！"
 
-	para "#MON that know"
-	line "CUT will be able"
+	para "あとね　いあいぎり<WO>おぼえた"
+	line "#<WA>たたか<TTE>いないときでも"
+	cont "そ<NO>わざ<WO>つかえるんだよ！"
 
-	para "to use it outside"
-	line "of battle too."
-
-	para "Here, I also want"
-	line "you to have this."
+	para "それと　これ<WO>も<TTE>い<TTE>！"
 	done
 
 BugsyText_FuryCutterSpeech:
-	text "TM49 contains"
-	line "FURY CUTTER."
+	text "<TM>４９<NO>なかみは"
+	line "れんぞくぎり　だよ！"
 
-	para "If you don't miss,"
-	line "it gets stronger"
-	cont "every turn."
+	para "<KOUGEKI><GA>はずれない　かぎり"
+	line "いりょく<GA>どんどん　あがる！"
 
-	para "The longer your"
-	line "battle goes, the"
-	cont "better it gets."
+	para "たたかい<GA>ながく　なるほど"
+	line "ゆうり<NI>なるんだ！"
 
-	para "Isn't that great?"
-	line "I discovered it!"
+	para "どう　すごい　でしょ！？"
+	line "ぼく<NO>はっけん　なんだよ"
 	done
 
 BugsyText_BugMonsAreDeep:
-	text "Bug #MON are"
-	line "deep. There are"
+	text "むし#<WA>おく<GA>ふかいんだ"
+	line "まだまだ　けんきゅう　することが"
+	cont "いっぱい　あるんだよ"
 
-	para "many mysteries to"
-	line "be explored."
-
-	para "Study your favor-"
-	line "ites thoroughly."
+	para "きみも　すきな　#"
+	line "て<TTE>いてき<NI>しらべたら　どう？"
 	done
 
 BugCatcherBennySeenText:
-	text "Bug #MON evolve"
-	line "young. So they get"
-
-	para "stronger that much"
-	line "faster."
+	text "むし#<WA>しんか<GA>はやい！"
+	line "わかる？　それだけ"
+	cont "はやく　つよくなる<TTE>　ことだよ！"
 	done
 
 BugCatcherBennyBeatenText:
-	text "Just evolving"
-	line "isn't enough!"
+	text "しんか　させただけじゃ　だめかあ"
 	done
 
 BugCatcherBennyAfterBattleText:
-	text "#MON become"
-	line "stronger if they"
-	cont "evolve. Really!"
+	text "#<GA>しんか　すると"
+	line "パワーアップ　するの<WA>ほんとだよ！"
 	done
 
 BugCatcherAlSeenText:
-	text "Bug #MON are"
-	line "cool and tough!"
-
-	para "I'll prove it to"
-	line "you!"
+	text "かっこよくて　つよい"
+	line "むし#<NO>みりょく"
+	cont "おしえてやるぜ！"
 	done
 
 BugCatcherAlBeatenText:
-	text "You proved how"
-	line "tough you are…"
+	text "きみ<NO>つよさ<WO>おしえられたぜ！"
 	done
 
 BugCatcherAlAfterBattleText:
-	text "They're so cool,"
-	line "but most girls"
-
-	para "don't like bug"
-	line "#MON."
-
-	para "I don't know why…"
+	text "こんな<NI>かっこいいのに"
+	line "むし#　きらい<TTE>　いう"
+	cont "おんなのこ　けっこう　いるんだよ"
+	cont "どうしてだか　わかんないや"
 	done
 
 BugCatcherJoshSeenText:
-	text "You saved all the"
-	line "SLOWPOKE? Whew,"
-	cont "you're mighty!"
+	text "ヤドン<WO>たすけたんだ<TTE>？"
+	line "なかなか　やるな"
 
-	para "But my grown-up"
-	line "#MON are pretty"
-	cont "tough too!"
+	para "でも　おれ<NO>#も"
+	line "そだ<TTE>るから　かなり　つよいぜ！"
 	done
 
 BugCatcherJoshBeatenText:
-	text "Urrgggh!"
+	text "ぐぐぐ<⋯>"
 	done
 
 BugCatcherJoshAfterBattleText:
-	text "I guess I should"
-	line "teach them better"
-	cont "moves…"
+	text "もっと　つよい　わざを"
+	line "おしえないと　かてないのかなあ"
 	done
 
 TwinsAmyandmay1SeenText:
-	text "AMY: Hi! Are you"
-	line "challenging the"
-	cont "LEADER? No way!"
+	text "クミ『おにいちゃん"
+	line "リーダー<NI>ちょうせん　ですかー？"
+	cont "そんな<NO>むりむり　ですー"
 	done
 
 TwinsAmyandmay1BeatenText:
-	text "AMY & MAY: Oh,"
-	line "double goodness!"
+	text "クミとルミ『あらあら　ですー"
 	done
 
 TwinsAmyandmay1AfterBattleText:
-	text "AMY: You're"
-	line "really strong!"
+	text "クミ『おにいちゃん　つよいですー"
 	done
 
 TwinsAmyandmay2SeenText:
-	text "MAY: You want to"
-	line "see the LEADER?"
-	cont "We come first!"
+	text "ルミ『おにいちゃん"
+	line "リーダー<NI>ちょうせん　ですかー？"
+	cont "じゃあ　さっそく　たたかうですー"
 	done
 
 TwinsAmyandmay2BeatenText:
-	text "AMY & MAY: Oh,"
-	line "double goodness!"
+	text "クミとルミ『あらあら　ですー"
 	done
 
 TwinsAmyandmay2AfterBattleText:
-	text "MAY: Our bug #-"
-	line "MON lost! Oh, what"
-	cont "a shame."
+	text "ルミ『むし#さん　まけちゃった"
+	line "ざんねん　ですー"
 	done
 
 AzaleaGymGuideText:
-	text "Yo, challenger!"
+	text "オッス"
+	line "チャレンジャー！"
 
-	para "BUGSY's young, but"
-	line "his knowledge of"
+	para "ツクシ<WA>まだ　おさないけれど"
+	line "むし#<NO>ちしき　なら"
+	cont "おとなにだ<TTE>　まけてない！"
 
-	para "bug #MON is for"
-	line "real."
+	para "アドバイス<GA>ないと　つらいだろ？"
+	line "よーし　まかせとけ！"
 
-	para "It's going to be"
-	line "tough without my"
-	cont "advice."
+	para "そうだな！"
+	line "むし#<WA>ほのお<GA>きらいだ！"
 
-	para "Let's see… Bug"
-	line "#MON don't like"
-	cont "fire."
-
-	para "Flying-type moves"
-	line "are super-effec-"
-	cont "tive too."
+	para "あと　ひこうタイプ<NO>わざも"
+	line "こうか　ばつぐん　だな！"
 	done
 
 AzaleaGymGuideWinText:
-	text "Well done! That"
-	line "was a great clash"
+	text "やるじゃないか！"
+	line "わかい　<TRAINER>どうしの"
+	cont "はげしい　バトル<⋯>"
 
-	para "of talented young"
-	line "trainers."
-
-	para "With people like"
-	line "you, the future of"
-	cont "#MON is bright!"
+	para "#せかいの"
+	line "みらい<WA>あかるいな！"
 	done
 
 AzaleaGym_MapEvents:

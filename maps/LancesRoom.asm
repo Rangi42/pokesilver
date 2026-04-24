@@ -209,134 +209,94 @@ LancesRoomMovementData_MaryRunsBackAndForth:
 	step_end
 
 LanceBattleIntroText:
-	text "LANCE: I've been"
-	line "waiting for you."
+	text "ワタル『ま<TTE>いたよ！"
 
-	para "<PLAYER>!"
+	para "<PLAYER>くん！"
 
-	para "I knew that you,"
-	line "with your skills,"
+	para "きみ<NO>じつりょく　なら　いずれ"
+	line "ここまで　くること<WA>わか<TTE>いた"
 
-	para "would eventually"
-	line "reach me here."
+	para "なにも　いうこと<WA>ない！"
 
-	para "There's no need"
-	line "for words now."
+	para "ただ　どちら<GA>つよいか"
+	line "たたか<TTE>　きめるだけ！"
 
-	para "We will battle to"
-	line "determine who is"
+	para "さいきょう<NO><TRAINER>　として"
+	line "リーグ　チャンピオン　として"
 
-	para "the stronger of"
-	line "the two of us."
-
-	para "As the most power-"
-	line "ful trainer and as"
-
-	para "the #MON LEAGUE"
-	line "CHAMPION…"
-
-	para "I, LANCE the drag-"
-	line "on master, accept"
-	cont "your challenge!"
+	para "ドラゴンつかい<NO>ワタル"
+	line "いざ　まいる！"
 	done
 
 LanceBattleWinText:
-	text "…It's over."
+	text "<⋯>　おわった"
 
-	para "But it's an odd"
-	line "feeling."
+	para "だけど　ふしぎな　きぶん　だよ"
 
-	para "I'm not angry that"
-	line "I lost. In fact, I"
-	cont "feel happy."
-
-	para "Happy that I"
-	line "witnessed the rise"
-
-	para "of a great new"
-	line "CHAMPION!"
+	para "きっと　まけた　くやしさより"
+	line "いい　チャンピオン<NO>たんじょうに"
+	cont "たちあえた　よろこび<NO>ほうが"
+	cont "おおきいから　かな"
 	done
 
 LanceBattleAfterText:
-	text "…Whew."
+	text "<⋯>　ふう"
 
-	para "You have become"
-	line "truly powerful,"
-	cont "<PLAYER>."
+	para "つよく　なったね"
+	line "<PLAYER>くん"
+	cont "ほんとう<NI>つよく　なったよ"
 
-	para "Your #MON have"
-	line "responded to your"
+	para "<TRAINER><NO>きみが"
+	line "ただしくて　つよい　こころ<WO>もてば"
+	cont "#も　それ<NI>こたえてくれる"
 
-	para "strong and up-"
-	line "standing nature."
-
-	para "As a trainer, you"
-	line "will continue to"
-
-	para "grow strong with"
-	line "your #MON."
+	para "そうして　<TRAINER>も　#も"
+	line "どんどん　つよくな<TTE>　いくんだ<⋯>"
 	done
 
 LancesRoomMaryOhNoOakText:
-	text "MARY: Oh, no!"
-	line "It's all over!"
-
-	para "PROF.OAK, if you"
-	line "weren't so slow…"
+	text "クルミ『あー　おわっちゃったあ！"
+	line "もー　はかせ<GA>おそいからですよう！"
 	done
 
 LancesRoomOakCongratulationsText:
-	text "PROF.OAK: Ah,"
-	line "<PLAYER>!"
+	text "オーキド『おお　<PLAYER>くん！"
+	line "ひさしぶり　じゃのう"
+	cont "いやあ　たくましくなった"
 
-	para "It's been a long"
-	line "while."
+	para "#　リーグ　せいは"
+	line "ほんとう<NI>すごい　ことじゃ！"
 
-	para "You certainly look"
-	line "more mature."
+	para "きみ<GA>#への"
+	line "しんらいと　あいじょう<WO>わすれずに"
+	cont "こつこつと　や<TTE>きた"
+	cont "けっか<GA>みのったのじゃよ"
 
-	para "Your conquest of"
-	line "the LEAGUE is just"
-	cont "fantastic!"
+	para "いやあ　#たちも　えらいぞ"
+	line "#も　<TRAINER>のこと"
+	cont "しんじているから　がんばれるのじゃ！"
 
-	para "Your dedication,"
-	line "trust and love for"
-
-	para "your #MON made"
-	line "this happen."
-
-	para "Your #MON were"
-	line "outstanding too."
-
-	para "Because they be-"
-	line "lieved in you as a"
-
-	para "trainer, they per-"
-	line "severed."
-
-	para "Congratulations,"
-	line "<PLAYER>!"
+	para "<PLAYER>くん"
+	line "ほんとう<NI>おめでとう！"
 	done
 
 LancesRoomMaryInterviewText:
-	text "MARY: Let's inter-"
-	line "view the brand new"
-	cont "CHAMPION!"
+	text "クルミ『じゃー　あたらしい"
+	line "チャンピオン<NO>インタビューですう"
 	done
 
 LancesRoomNoisyText:
-	text "LANCE: This is"
-	line "getting to be a"
-	cont "bit too noisy…"
+	text "ワタル『<⋯>　なんだか"
+	line "さわがしく　な<TTE>きたな<⋯>"
 
-	para "<PLAYER>, could you"
-	line "come with me?"
+	para "<PLAYER>くん　ちょっと！"
+
+	para "ついて　きてくれないか"
 	done
 
 LancesRoomMaryNoInterviewText:
-	text "MARY: Oh, wait!"
-	line "We haven't done"
-	cont "the interview!"
+	text "クルミ『あー　インタビュー"
+	line "まだ　ですようー"
 	done
 
 LancesRoom_MapEvents:

@@ -35,43 +35,30 @@ VermilionPokecenter1FBugCatcherScript:
 	jumptextfaceplayer VermilionPokecenter1FBugCatcherText
 
 VermilionPokecenter1FFishingGuruText:
-	text "A sleeping #MON"
-	line "is lying in front"
-	cont "of DIGLETT'S CAVE."
+	text "ディグダのあな<NO>まえで"
+	line "いねむり#<GA>ねむ<TTE>る！"
 
-	para "It's a fantastic"
-	line "opportunity to get"
-
-	para "it, but how do you"
-	line "wake it up?"
+	para "つかまえる　チャンス　だけど"
+	line "どうやったら　おきるんだ？"
 	done
 
 VermilionPokecenter1FFishingGuruText_FoughtSnorlax:
-	text "There used to be a"
-	line "sleeping #MON"
-
-	para "lying in front of"
-	line "DIGLETT'S CAVE."
-
-	para "But it seems to"
-	line "have disappeared."
+	text "ディグダのあな<NO>まえに"
+	line "いねむり#<GA>ねていたけど"
+	cont "いつのまにか　いなくなっ<TA!>"
 	done
 
 VermilionPokecenter1FSailorText:
-	text "The FAST SHIP is a"
-	line "great place to"
-
-	para "meet and battle"
-	line "trainers."
+	text "<TRAINER>と　たいせん　するのも"
+	line "こうそくせん<NO>だいごみ　さ！"
 	done
 
 VermilionPokecenter1FBugCatcherText:
-	text "Oh? You have some"
-	line "BADGES I've never"
-	cont "seen before."
+	text "あれ？　みたことのない"
+	line "ジムのバッジ<WO>も<TTE>るね"
 
-	para "Oh, I get it. You"
-	line "got them in JOHTO."
+	para "あ　そうか"
+	line "ジョウト<NI>すんでる　ひとなんだね！"
 	done
 
 VermilionPokecenter1F_MapEvents:

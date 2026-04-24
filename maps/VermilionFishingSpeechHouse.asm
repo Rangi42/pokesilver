@@ -16,33 +16,23 @@ FishingDudesHouseBookshelf: ; unreferenced
 	jumpstd PictureBookshelfScript
 
 FishingDudeText:
-	text "I am the FISHING"
-	line "GURU, the elder of"
-	cont "the FISHING BROS."
+	text "わし<WA>つりオヤジ！"
+	line "つりずき　きょうだい<NO>あに！"
 
-	para "Do you happen to"
-	line "know FISHERMAN"
+	para "きみ<WA>４４ばんどうろ<NI>いた"
+	line "つりびと<NO>ヒデノリ　し<TTE>る？"
 
-	para "WILTON? He fishes"
-	line "on ROUTE 44."
+	para "あいつ<GA>でんわで　おしえてくれる"
+	line "つりじょうほう<WA>すごいよ"
 
-	para "He came through"
-	line "with an amazing"
-	cont "tip on the phone."
-
-	para "Thanks to him, I"
-	line "caught a whole lot"
-
-	para "of a rare #MON."
-	line "What a day it was!"
+	para "めずらしーい　#　つれまくり！"
+	line "まさ<NI>いれぐい　だったよ！"
 	done
 
 FishingDudesHousePhotoText:
-	text "It's a photo of"
-	line "people fishing…"
-
-	para "They're having a"
-	line "great time…"
+	text "つり<WO>している　ひとが"
+	line "うつ<TTE>いる<⋯>"
+	cont "すごく　たのしそうだ"
 	done
 
 VermilionFishingSpeechHouse_MapEvents:

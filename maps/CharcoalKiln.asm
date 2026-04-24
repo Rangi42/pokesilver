@@ -76,74 +76,57 @@ CharcoalKilnRadio:
 	jumpstd Radio2Script
 
 CharcoalKilnBossText1:
-	text "All the SLOWPOKE"
-	line "have disappeared"
-	cont "from the town."
+	text "まちから　ヤドン<GA>いなくなった"
 
-	para "The forest's pro-"
-	line "tector may be"
-	cont "angry with us…"
+	para "うーん　もりのかみさまが"
+	line "おいかり　なのか<⋯>？"
 
-	para "It may be a bad"
-	line "omen. We should"
-	cont "stay in."
+	para "なんにしろ　よくねえ　しらせ　かもな"
+	line "こんなとき<WA>じっとしてる<NI>かぎる"
 	done
 
 CharcoalKilnBossText2:
-	text "The SLOWPOKE have"
-	line "returned…"
+	text "ヤドン<WA>もど<TTE>きたが<⋯>"
 
-	para "But my APPRENTICE"
-	line "hasn't come back"
-	cont "from ILEX FOREST."
+	para "こんど<WA>みならい<NO>やつ"
+	line "ウバメのもりから　かえ<TTE>こねえ"
+	cont "いつまで　あそんでんだか<⋯>"
 
-	para "Where in the world"
-	line "is that lazy guy?"
+	para "ったく！"
+	line "しょうがねえ　やつ　だ！"
 	done
 
 CharcoalKilnBossText3:
-	text "You chased off"
-	line "TEAM ROCKET and"
+	text "<ROCKET><WO>おいはらい"
+	line "ウバメのもりも　おそれず<NI>はいる"
 
-	para "went to ILEX"
-	line "FOREST alone?"
-
-	para "That takes guts!"
-	line "I like that. Come"
-	cont "train with us."
+	para "おまえさん<NO>どきょう　きにいっ<TA!>"
+	line "どうだ！　わしらと　いっしょに"
+	cont "しゅぎょう　しないか？"
 	done
 
 CharcoalKilnApprenticeText1:
-	text "Where have all the"
-	line "SLOWPOKE gone?"
-
-	para "Are they out play-"
-	line "ing somewhere?"
+	text "どうして　ヤドン　いなくなったんだ"
+	line "どこか　あそび<NI>い<TTE>るのかな？"
 	done
 
 CharcoalKilnApprenticeText2:
-	text "I'm sorry--I for-"
-	line "got to thank you."
+	text "そういや"
+	line "きみ<NI>おれい<WO>してなかったっけ"
 
-	para "This is CHARCOAL"
-	line "that I made."
-
-	para "Fire-type #MON"
-	line "would be happy to"
-	cont "hold that."
+	para "これ　おれ<GA>やいた　スミ　なんだ"
+	line "ほのおタイプ<NO>#に"
+	cont "もたせると　よろこぶと　おもうよ！"
 	done
 
 CharcoalKilnApprenticeText3:
-	text "The SLOWPOKE came"
-	line "back, and you even"
-	cont "found FARFETCH'D."
-
-	para "You're the cool-"
-	line "est, man!"
+	text "ヤドンも　もど<TTE>きたし"
+	line "カモネギも　みつかった"
+	cont "きみ　かなり　かっこいいね！"
 	done
 
 FarfetchdText:
-	text "FARFETCH'D: Kwaa!"
+	text "カモネギ『くわー"
 	done
 
 CharcoalKiln_MapEvents:

@@ -17,18 +17,16 @@ VermilionMagnetTrainSpeechHouseBookshelf:
 	jumpstd PictureBookshelfScript
 
 VermilionMagnetTrainSpeechHousePokefanFText:
-	text "Do you know about"
-	line "the MAGNET TRAIN?"
+	text "リニアのこと　し<TTE>る？"
 
-	para "It's a railway"
-	line "that goes to GOL-"
-	cont "DENROD in JOHTO."
+	para "ジョウト<NO>コガネシティまで"
+	line "つうじてる　てつどう<NO>ことよ"
 	done
 
 VermilionMagnetTrainSpeechHouseYoungsterText:
-	text "I want to go to"
-	line "SAFFRON to see"
-	cont "the MAGNET TRAIN."
+	text "ヤマブキー！"
+	line "ヤマブキ　いくー！"
+	cont "リニア　みたいよーっ！"
 	done
 
 VermilionMagnetTrainSpeechHouse_MapEvents:

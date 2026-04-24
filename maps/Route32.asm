@@ -447,387 +447,305 @@ Movement_Route32CooltrainerMReset2:
 	step_end
 
 Route32CooltrainerMText_WhatsTheHurry:
-	text "Wait up!"
-	line "What's the hurry?"
+	text "かーっ！！"
+	line "またれいーっ！！"
 	done
 
 Route32CooltrainerMText_AideIsWaiting:
-	text "<PLAYER>, right?"
-	line "Some guy wearing"
+	text "<PLAYER>と<WA>おぬし<NO>ことだな？"
+	line "おぬし<WO>さがしとる"
+	cont "メガネ<NO>おとこ<GA>おったぞ"
 
-	para "glasses was look-"
-	line "ing for you."
-
-	para "See for yourself."
-	line "He's waiting for"
-
-	para "you at the #MON"
-	line "CENTER."
+	para "#センターで"
+	line "おぬし<WO>ま<TTE>いるだろう"
+	cont "い<TTE>みなさい！"
 	done
 
 Route32CooltrainerMText_UnusedSproutTower:
-	text "Have you gone to"
-	line "SPROUT TOWER?"
+	text "マダツボミのとう　に<WA>いったのか？"
+	line "キキョウによれば　マダツボミのとうで"
+	cont "しゅぎょう　する"
 
-	para "If you ever visit"
-	line "VIOLET CITY, "
-
-	para "they'll expect you"
-	line "to train there."
-
-	para "That's basic for"
-	line "trainers. Go to"
-	cont "SPROUT TOWER!"
+	para "<TRAINER><NO>じょうしき　ではないか"
+	line "い<TTE>みなさい！"
 	done
 
 Route32CooltrainerMText_VioletGym:
-	text "Have you gone to"
-	line "the #MON GYM?"
+	text "#ジム　に<WA>いったのか？"
+	line "#ジム<NI>よ<TTE>"
+	cont "おのれと　#<WO>きたえる"
 
-	para "You can test your"
-	line "#MON and your-"
-	cont "self there."
-
-	para "It's a rite of"
-	line "passage for all"
-	cont "trainers!"
+	para "<TRAINER><NO>じょうしき　ではないか"
+	line "い<TTE>みなさい！"
 	done
 
 Route32CooltrainerMText_HaveThisSeed:
-	text "You have some good"
-	line "#MON there."
+	text "うむ　いい#<WO>つれておる"
+	line "それも　これも　キキョウで"
+	cont "いろいろ　きたえたからだろう"
 
-	para "It must be from"
-	line "the training you"
+	para "とく<NI>#ジム　での"
+	line "しゅぎょう<WA>ため<NI>なったはず"
 
-	para "gave them around"
-	line "VIOLET CITY."
+	para "よし！　キキョウにきた　きねんだ"
+	line "これ<WO>も<TTE>いきなさい"
 
-	para "The training at"
-	line "the GYM must have"
-
-	para "been especially"
-	line "helpful."
-
-	para "As a souvenir of"
-	line "VIOLET CITY, take"
-	cont "this."
-
-	para "It increases the"
-	line "power of grass-"
-	cont "type moves."
+	para "#<NI>もたせると"
+	line "くさタイプ<NO>わざ<NO>いりょくが"
+	cont "あがる　という　しろものだ！"
 	done
 
 Route32CooltrainerMText_ExperiencesShouldBeUseful:
-	text "Your experiences"
-	line "in VIOLET CITY"
-
-	para "should be useful"
-	line "for your journey."
+	text "キキョウで<NO>けいけんは"
+	line "そなた<NO>たび<NI>やくだつであろう"
 	done
 
 Text_MillionDollarSlowpokeTail:
-	text "How would you like"
-	line "to have this"
+	text "うまくて　えいようまんてんの"
+	line "おいしいシッポ<WA>いらない？"
 
-	para "tasty, nutritious"
-	line "SLOWPOKETAIL?"
-
-	para "For you right now,"
-	line "just ¥1,000,000!"
-
-	para "You'll want this!"
+	para "いまなら　たった<NO>１００まん円"
+	line "どう　かうでしょ？"
 	done
 
 Text_ThoughtKidsWereLoaded:
-	text "Tch! I thought"
-	line "kids these days"
-	cont "were loaded…"
+	text "おかね　たりないぞ！"
+
+	para "ちっ！　さいきん<NO>こどもは"
+	line "かねもちだと　おも<TTE>たが<⋯>"
 	done
 
 Text_RefusedToBuySlowpokeTail:
-	text "You don't want it?"
-	line "Then scram. Shoo!"
+	text "いらないのか！"
+	line "じゃあ　あっち　いっ<TA!>　いっ<TA!>"
 	done
 
 FisherJustinSeenText:
-	text "Whoa!"
+	text "うわっ！"
 
-	para "You made me lose"
-	line "that fish!"
+	para "おどろかすから　えもの<GA>にげたぞ！"
 	done
 
 FisherJustinBeatenText:
-	text "Sploosh!"
+	text "どぼん！"
 	done
 
 FisherJustinAfterText:
-	text "Calm, collected…"
-	line "The essence of"
+	text "あわてず　さわがず<⋯>"
 
-	para "fishing and #-"
-	line "MON is the same."
+	para "つりも　#も"
+	line "ごくい<WA>いっしょ　だな"
 	done
 
 FisherRalph1SeenText:
-	text "I'm a good angler,"
-	line "but an even better"
-	cont "trainer!"
+	text "つりも　とくい　だが"
+	line "#<WA>もっと　とくい　だよ！"
 	done
 
 FisherRalph1BeatenText:
-	text "Tch! I tried to"
-	line "rush things…"
+	text "しかけ<WO>あせった<⋯>"
 	done
 
 FisherRalphAfterText:
-	text "Fishing is a life-"
-	line "long passion."
-
-	para "#MON are life-"
-	line "long friends!"
+	text "つり<WA>いっしょう<NO>たのしみ！"
+	line "#<WA>いっしょう<NO>ともだち！"
 	done
 
 Route32UnusedFisher1SeenText: ; unreferenced
-	text "I keep catching"
-	line "the same #MON…"
-
-	para "Maybe a battle"
-	line "will turn things"
-	cont "around for me."
+	text "おなじ　#しか　つれない<⋯>"
+	line "きばらし<NI>ちょっと　たたかうか<⋯>"
 	done
 
 Route32UnusedFisher1BeatenText: ; unreferenced
-	text "Nothing ever goes"
-	line "right for me now…"
+	text "ダメな　ときは"
+	line "な<NI>や<TTE>も　ダメかあ"
 	done
 
 Route32UnusedFisher1AfterText: ; unreferenced
-	text "How come the guy"
-	line "next to me catches"
-	cont "good #MON?"
+	text "となり<NO>つりびと"
+	line "なんで　いい　#<GA>つれるの？"
 	done
 
 Route32UnusedFisher2SeenText: ; unreferenced
-	text "Heh, I'm on a roll"
-	line "today. How about a"
-	cont "battle, kid?"
+	text "きょう<WA>ぜっこうちょう　だな"
+	line "おーし　ちょっと　たたかうか！"
 	done
 
 Route32UnusedFisher2BeatenText: ; unreferenced
-	text "Oof. I wasn't"
-	line "lucky that time."
+	text "あらら"
+	line "しょうぶ<WA>ダメかあ"
 	done
 
 Route32UnusedFisher2AfterText: ; unreferenced
-	text "You have to have a"
-	line "good ROD if you"
-
-	para "want to catch good"
-	line "#MON."
+	text "いい　#<WO>つりたきゃ"
+	line "いい　つりざお<WO>つかわないと！"
 	done
 
 FisherHenrySeenText:
-	text "My #MON?"
-	line "Freshly caught!"
+	text "わし<NO>#"
+	line "とれたて<NO>ぴちぴち！"
 	done
 
 FisherHenryBeatenText:
-	text "SPLASH?"
+	text "ばしゃばしゃ"
 	done
 
 FisherHenryAfterText:
-	text "Freshly caught"
-	line "#MON are no"
-
-	para "match for properly"
-	line "raised ones."
+	text "つかまえた　ばかりじゃ"
+	line "そだてた　#に<WA>かなわんなあ"
 	done
 
 YoungsterAlbertSeenText:
-	text "I haven't seen you"
-	line "around before."
-
-	para "So you think you"
-	line "are pretty tough?"
+	text "みかけない　かお　だな"
+	line "おまえ　つよいの？"
 	done
 
 YoungsterAlbertBeatenText:
-	text "You're strong!"
+	text "つよい　なあ！"
 	done
 
 YoungsterAlbertAfterText:
-	text "I'm going to try"
-	line "to be the best"
-	cont "with my favorites."
+	text "おれ<WA>じぶん<NO>すきな　#で"
+	line "さいきょう<WO>めざすッ！"
 
-	para "I'm not using the"
-	line "same tough #MON"
-	cont "as everyone else."
+	para "つよいから<TTE>　みんなと　おなじ"
+	line "#<WA>つかわないぜ"
 	done
 
 YoungsterGordonSeenText:
-	text "I found some good"
-	line "#MON in the"
-	cont "grass!"
-
-	para "I think they'll do"
-	line "it for me!"
+	text "くさむらで　いい#　みつけ<TA!>"
+	line "なんか　や<TTE>くれそうだぜ！"
 	done
 
 YoungsterGordonBeatenText:
-	text "Darn. I thought I"
-	line "could win."
+	text "あーあ"
+	line "かてると　おもったのに"
 	done
 
 YoungsterGordonAfterText:
-	text "The grass is full"
-	line "of clingy things."
+	text "くさむら　あるいてると"
+	line "くっつきむし　いっぱい　なんだよな"
 	done
 
 CamperRolandSeenText:
-	text "That glance…"
-	line "It's intriguing."
+	text "そ<NO>しせん<⋯>"
+	line "なんだか　き<NI>なるなあ"
 	done
 
 CamperRolandBeatenText:
-	text "Hmmm. This is"
-	line "disappointing."
+	text "うーん　ざんねん"
 	done
 
 CamperRolandAfterText:
-	text "If you don't want"
-	line "to battle, just"
-	cont "avoid eye contact."
+	text "たたかいたく　なかったら"
+	line "しせん<WO>あわさなければ　いいんだよ"
 	done
 
 PicnickerLiz1SeenText:
-	text "Uh-huh. Yeah, and"
-	line "you know…"
+	text "<⋯>　そうそう"
+	line "でね　そうなのよー"
 
-	para "Pardon? Battle?"
-	line "I'm on the phone."
-
-	para "Oh, all right. But"
-	line "make it fast."
+	para "えっ　なに？　#しょうぶ？"
+	line "もう　でんわ　してるのに"
+	cont "いいわ　さっさと　おわらせちゃうから"
 	done
 
 PicnickerLiz1BeatenText:
-	text "Take it easy!"
-	line "That's mean!"
+	text "もう！　むき<NI>なんないでよ！"
+	line "おんなのこ　あいてに！"
 	done
 
 PicnickerLiz1AfterText:
-	text "I was having a"
-	line "nice chat too."
+	text "たのしく　おはなし　してたのに"
 	done
 
 BirdKeeperPeterSeenText:
-	text "That BADGE! It's"
-	line "from VIOLET CITY!"
+	text "おや　そ<NO>バッジは<⋯>"
 
-	para "You beat FALKNER?"
+	para "キキョウ<NO>ジムバッジ！"
+	line "おまえ　ハヤトさん<NI>かったのか！"
 	done
 
 BirdKeeperPeterBeatenText:
-	text "I know what my"
-	line "weaknesses are."
+	text "じぶん<NO>みじゅくさ　わかったよ"
 	done
 
 BirdKeeperPeterAfterText:
-	text "I should train"
-	line "again at the GYM"
-	cont "in VIOLET CITY."
+	text "キキョウ<NO>#ジムで"
+	line "きたえなおすと　するか"
 	done
 
 Route32UnusedText: ; unreferenced
-	text "The fishermen"
-	line "yelled at me for"
-	cont "bugging them…"
+	text "つり<NO>じゃま！"
+	line "<TTE>　おこられちゃったよ<⋯>"
 	done
 
 Text_RoarIntro:
-	text "WROOOOAR!"
-	line "PEOPLE RUN WHEN I"
+	text "うおおおっ！"
 
-	para "ROAR! BUT YOU"
-	line "CAME LOOKING!"
-
-	para "THAT PLEASES ME!"
-	line "NOW TAKE THIS!"
+	para "ほえると　みんな　にげだすけど"
+	line "きみ<WA>きてくれたあああっ！"
+	cont "かんどう　だあああっ！"
+	cont "これ<WO>も<TTE>い<TTE>よおおおっ！"
 	done
 
 Text_RoarOutro:
-	text "WROOOAR!"
-	line "IT'S ROAR!"
-
-	para "EVEN #MON RUN"
-	line "FROM A GOOD ROAR!"
+	text "うおおおっ！"
+	line "なかみ<WA>ほえる！"
+	cont "ほえると　#も　にげだすよ"
 	done
 
 MeetFriedaText:
-	text "FRIEDA: Yahoo!"
-	line "It's Friday!"
+	text "カネコ『やっほー！"
 
-	para "I'm FRIEDA of"
-	line "Friday!"
-
-	para "Nice to meet you!"
+	para "あたし　きんようび<NO>カネコ！"
+	line "よろしくねー！"
 	done
 
 FriedaGivesGiftText:
-	text "Here's a POISON"
-	line "BARB for you!"
+	text "はい　どくバリ！"
+	line "キミ<NI>あげるよっ！"
 	done
 
 FriedaGaveGiftText:
-	text "FRIEDA: Give it to"
-	line "a #MON that has"
-	cont "poison-type moves."
+	text "カネコ『どくタイプのわざ<WO>おぼえた"
+	line "#<NI>もたせて　ごらん！"
 
-	para "Oh!"
+	para "あっ！"
 
-	para "It's wicked!"
+	para "と　びっくり！"
 
-	para "You'll be shocked"
-	line "how good it makes"
-	cont "poison moves!"
+	para "わざ<NO>いりょく<GA>つよくなるんだ！"
 	done
 
 FriedaFridayText:
-	text "FRIEDA: Hiya! What"
-	line "day do you like?"
+	text "カネコ『ども　ども！"
+	line "キミ<TTE>　なんようび<GA>すき？"
 
-	para "I love Friday. No"
-	line "doubt about it!"
+	para "あたし<WA>きんようびだな！"
+	line "ぜったい！"
 
-	para "Don't you think"
-	line "it's great too?"
+	para "そう　おもわない？"
 	done
 
 FriedaNotFridayText:
-	text "FRIEDA: Isn't it"
-	line "Friday today?"
-
-	para "It's so boring"
-	line "when it's not!"
+	text "カネコ『きょう<WA>きんようびじゃ"
+	line "ないのー？"
+	cont "つまんないー"
 	done
 
 Route32SignText:
-	text "ROUTE 32"
-
-	para "VIOLET CITY -"
-	line "AZALEA TOWN"
+	text "<KOKO_WA>３２<ROUTE>"
+	line "キキョウシティ　<⋯>　ヒワダタウン"
 	done
 
 Route32RuinsSignText:
-	text "RUINS OF ALPH"
-	line "EAST ENTRANCE"
+	text "アルフ<NO>いせき"
+	line "ひがしがわ　いりぐち"
 	done
 
 Route32UnionCaveSignText:
-	text "UNION CAVE"
-	line "Ahead"
+	text "このさき　つながり<NO>どうくつ"
 	done
 
 Route32_MapEvents:

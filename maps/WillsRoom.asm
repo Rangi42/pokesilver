@@ -79,51 +79,34 @@ WillsRoom_EnterMovement:
 	step_end
 
 WillScript_WillBeforeText:
-	text "Welcome to #MON"
-	line "LEAGUE, <PLAYER>."
+	text "ようこそ　#　リーグへ！"
 
-	para "Allow me to intro-"
-	line "duce myself. I am"
-	cont "WILL."
+	para "ボク<NO>なまえ<WA>イツキ"
 
-	para "I have trained all"
-	line "around the world,"
+	para "せかい<WO>たびしてまわり"
+	line "エスパー#の"
+	cont "しゅぎょう<NI>あけくれた"
 
-	para "making my psychic"
-	line "#MON powerful."
+	para "そして　ようやく"
+	line "してんのう<NO>ひとり<NI>なったんだ"
 
-	para "And, at last, I've"
-	line "been accepted into"
-	cont "the ELITE FOUR."
-
-	para "I can only keep"
-	line "getting better!"
-
-	para "Losing is not an"
-	line "option!"
+	para "ボク<WA>もっと　つよくなる！"
+	line "ここで　まけるわけに<WA>いかない！"
 	done
 
 WillScript_WillBeatenText:
-	text "I… I can't…"
-	line "believe it…"
+	text "<⋯>　まいったよ"
 	done
 
 WillScript_WillDefeatText:
-	text "Even though I was"
-	line "defeated, I won't"
-	cont "change my course."
+	text "まけたから　とい<TTE>"
+	line "ボク<NO>やること<WA>かわらない"
+	cont "<TRAINER><NO>ちょうてん<NI>たつため"
+	cont "たたかい　つづけるだけ"
 
-	para "I will continue"
-	line "battling until I"
-
-	para "stand above all"
-	line "trainers!"
-
-	para "Now, <PLAYER>, move"
-	line "on and experience"
-
-	para "the true ferocity"
-	line "of the ELITE FOUR."
+	para "きみ<WA>つぎ<NI>すすんで"
+	line "ほんとう<NO>してんのう<NO>こわさ"
+	cont "たしかめる<GA>いい！"
 	done
 
 WillsRoom_MapEvents:

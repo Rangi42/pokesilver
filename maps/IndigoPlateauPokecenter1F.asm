@@ -202,102 +202,83 @@ PlateauRivalLeavesMovement:
 	step_end
 
 IndigoPlateauPokecenter1FCooltrainerMText:
-	text "At the #MON"
-	line "LEAGUE, you'll get"
+	text "#　リーグは"
+	line "してんのう　４にん　すべてに"
+	cont "かちぬけるか　どうか<WO>ためされる"
 
-	para "tested by the"
-	line "ELITE FOUR."
-
-	para "You have to beat"
-	line "them all. If you"
-
-	para "lose, you have to"
-	line "start all over!"
+	para "まければ　もちろん"
+	line "さいしょから　やりなおしだ！"
 	done
 
 PlateauRivalText1:
-	text "Hold it."
+	text "まてよ"
 
-	para "You're going to"
-	line "take the #MON"
+	para "<⋯>　いまから　#　リーグ"
+	line "ちょうせん　か？"
 
-	para "LEAGUE challenge"
-	line "now?"
+	para "それ<WA>むり　だぜ"
 
-	para "That's not going"
-	line "to happen."
+	para "そだて<NI>そだてまくった"
+	line "オレ<NO>#が"
+	cont "おまえ<WO>たおすからな"
 
-	para "My super-well-"
-	line "trained #MON"
-
-	para "are going to pound"
-	line "you."
-
-	para "<PLAYER>!"
-	line "I challenge you!"
+	para "<PLAYER>！"
+	line "オレと　しょうぶ　しろ！"
 	done
 
 PlateauRivalWinText:
-	text "…"
+	text "<⋯>　<⋯>　<⋯>"
 
-	para "OK--I lost…"
+	para "オレ<NO>まけ<WA>みとめる<⋯>"
 	done
 
 PlateauRivalText2:
-	text "…Darn… I still"
-	line "can't win…"
+	text "<⋯>　くっ"
+	line "まだ　かてないのか<⋯>"
 
-	para "I… I have to think"
-	line "more about my"
-	cont "#MON…"
+	para "もっと<⋯>"
+	line "もっと　#のこと"
+	cont "かんがえてやる　ひつよう<GA>ある<⋯>"
+	cont "そういうことか"
 
-	para "Humph! Try not to"
-	line "lose!"
+	para "<⋯>　フン！"
+	line "せいぜい　がんばる<GA>いいさ"
 	done
 
 PlateauRivalLoseText:
-	text "…"
+	text "<⋯>　<⋯>　<⋯>"
 
-	para "Whew…"
-	line "With my partners,"
-
-	para "I'm going to be"
-	line "the CHAMPION!"
+	para "ふう<⋯>"
+	line "あと<WA>こいつらと　いっしょに"
+	cont "チャンピオン<NI>な<TTE>やるぜ"
 	done
 
 TeleportGuyText1:
-	text "Ah! You're chal-"
-	line "lenging the ELITE"
+	text "ほう　してんのう<NI>ちょうせんか！"
+	line "もっと　しゅぎょう<WO>しなくても"
+	cont "だいじょうぶ　かね？"
 
-	para "FOUR? Are you sure"
-	line "you're ready?"
+	para "わし<NO>ケーシィ<NO>テレポートは"
+	line "きょうりょく　じゃからのう"
+	cont "きみ<WO>いえまで　おくりとばすぞ！"
 
-	para "If you need to"
-	line "train some more,"
-
-	para "my ABRA can help"
-	line "you."
-
-	para "It can TELEPORT"
-	line "you home."
-
-	para "Would you like to"
-	line "go home now?"
+	para "どうするかね"
+	line "おく<TTE>　ほしいかい？"
 	done
 
 TeleportGuyYesText:
-	text "OK, OK. Picture"
-	line "your house in your"
-	cont "mind…"
+	text "そうかい　そうかい"
+	line "それじゃ　じぶん<NO>いえを"
+	cont "あたま<NI>おもいうかべるんじゃ"
 	done
 
 TeleportGuyNoText:
-	text "OK, OK. The best"
-	line "of luck to you!"
+	text "そうかい　そうかい"
+	line "それじゃ　がんばるんじゃぞ！"
 	done
 
 AbraText:
-	text "ABRA: Aabra…"
+	text "ケーシィ『シィ<⋯>"
 	done
 
 IndigoPlateauPokecenter1F_MapEvents:

@@ -168,203 +168,165 @@ MrPokemonsHouse_OakExits:
 	step_end
 
 MrPokemonIntroText1:
-	text "Hello, hello! You"
-	line "must be <PLAYER>."
+	text "やあやあ"
+	line "きみ<GA><PLAYER>くん　だね"
 
-	para "PROF.ELM said that"
-	line "you would visit."
+	para "ウツギはかせ　から"
+	line "れんらく<GA>あ<TTE>　ま<TTE>たんだ"
 	done
 
 MrPokemonIntroText2:
-	text "This is what I"
-	line "want PROF.ELM to"
-	cont "examine."
+	text "これ<GA>ウツギはかせに"
+	line "しらべて　もらいたい　も<NO>だよ！"
 	done
 
 MrPokemonsHouse_GotEggText:
-	text "<PLAYER> received"
-	line "MYSTERY EGG."
+	text "<PLAYER><WA>#じいさん　から"
+	line "ふしぎなタマゴ<WO>あずかっ<TA!>"
 	done
 
 MrPokemonIntroText3:
-	text "I know a couple"
-	line "who run a #MON"
-	cont "DAY-CARE service."
+	text "#<WO>あずか<TTE>　そだててる"
+	line "ふうふ<GA>いるんだがの"
+	cont "そこで　もらった　も<NO>なんだよ"
 
-	para "They gave me that"
-	line "EGG."
+	para "もしかしたら<⋯>　と　おも<TTE>"
+	line "ウツギはかせ<NI>メールおくったんだ"
 
-	para "I was intrigued,"
-	line "so I sent mail to"
-	cont "PROF.ELM."
-
-	para "For #MON evolu-"
-	line "tion, PROF.ELM is"
-	cont "the authority."
+	para "#しんか<NO>けんきゅう　なら"
+	line "ウツギはかせ<GA>いちばん！"
 	done
 
 MrPokemonIntroText4:
-	text "Even PROF.OAK here"
-	line "recognizes that."
+	text "なにせ　こ<NO>オーキドはかせも"
+	line "みとめる　ほど　だからのう"
 	done
 
 MrPokemonIntroText5:
-	text "If my assumption"
-	line "is correct, PROF."
-	cont "ELM will know it."
+	text "わし<NO>そうぞう<GA>あた<TTE>るか<⋯>"
+	line "ウツギはかせ　なら　わかる　ハズだ！"
 	done
 
 MrPokemonsHouse_MrPokemonHealText:
-	text "You are returning"
-	line "to PROF.ELM?"
+	text "ウツギはかせ<NO>ところに"
+	line "もどる　つもり　なんだろう？"
 
-	para "Here. Your #MON"
-	line "should have some"
-	cont "rest."
+	para "すこし　#を"
+	line "やすませる<GA>よかろう！"
 	done
 
 MrPokemonText_ImDependingOnYou:
-	text "I'm depending on"
-	line "you!"
+	text "それじゃ　よろしく　たのむよ！"
 	done
 
 MrPokemonText_AlwaysNewDiscoveries:
-	text "Life is delight-"
-	line "ful! Always, new"
-
-	para "discoveries to be"
-	line "made!"
+	text "よのなか<WA>おもしろい　のう！"
+	line "いろんな　はっけん<GA>あるからの！"
 	done
 
 MrPokemonsHouse_OakText1:
-	text "OAK: Aha! So"
-	line "you're <PLAYER>!"
+	text "オーキド『ほっほ！"
+	line "キミ<GA><PLAYER>くん　か！"
 
-	para "I'm OAK! A #MON"
-	line "researcher."
+	para "わし<WA>オーキド"
+	line "#　けんきゅうか　じゃよ！"
 
-	para "I was just visit-"
-	line "ing my old friend"
-	cont "MR.#MON."
+	para "ふるい　ともだちの"
+	line "#じいさん<WO>たずねて　みたら"
+	cont "ウツギくん<NO>ところ　から"
+	cont "おつかい<GA>くると　きいて"
+	cont "ま<TTE>たんじゃよ！"
 
-	para "I heard you were"
-	line "running an errand"
+	para "ほほうっ！"
+	line "めずらしい　#<WO>も<TTE>るな！"
 
-	para "for PROF.ELM, so I"
-	line "waited here."
+	para "それに<⋯>　<⋯>"
 
-	para "Oh! What's this?"
-	line "A rare #MON!"
+	para "ふむ　なるほど！"
 
-	para "Let's see…"
+	para "ウツギくん<GA>#<WO>あげて"
+	line "キミ<NI>おつかい<WO>たのんだ　りゆう"
+	cont "なっとく　したよ！"
 
-	para "Hm, I see!"
+	para "わしや　ウツギくん<NO>ような"
+	line "けんきゅうしゃ<NI>と<TTE>　#は"
+	cont "だいじな　ともだち　じゃからな！"
 
-	para "I understand why"
-	line "PROF.ELM gave you"
+	para "キミならば　#<WO>だいじに"
+	line "そだてて　くれそうだと　いうことじゃ"
 
-	para "a #MON for this"
-	line "errand."
+	para "<⋯>　そうじゃ！"
 
-	para "To researchers"
-	line "like PROF.ELM and"
+	para "キミ<WO>みこんで　わしからも"
+	line "ひとつ　おねがい　しようかの！"
 
-	para "I, #MON are our"
-	line "friends."
+	para "じつはな<⋯>"
 
-	para "He saw that you"
-	line "would treat your"
+	para "ほれ！"
+	line "こ<NO>#ずかん　じゃ！"
 
-	para "#MON with love"
-	line "and care."
-
-	para "…Ah!"
-
-	para "You seem to be"
-	line "dependable."
-
-	para "How would you like"
-	line "to help me out?"
-
-	para "See? This is the"
-	line "latest version of"
-	cont "#DEX."
-
-	para "It automatically"
-	line "records data on"
-
-	para "#MON you've"
-	line "seen or caught."
-
-	para "It's a hi-tech"
-	line "encyclopedia!"
+	para "みつけた　#<NO>データが"
+	line "じどうてき<NI>かきこまれて"
+	cont "ページ<GA>ふえていく　という"
+	cont "ハイテクな　ずかん　なのじゃよ！"
 	done
 
 MrPokemonsHouse_GetDexText:
-	text "<PLAYER> received"
-	line "#DEX!"
+	text "<PLAYER><WA>オーキドはかせから"
+	line "#ずかん<WO>もらっ<TA!>"
 	done
 
 MrPokemonsHouse_OakText2:
-	text "Go meet many kinds"
-	line "of #MON and"
+	text "たくさん<NO>#と　であい"
+	line "こ<NO>ずかんを"
+	cont "かんぺき<NI>してほしいのじゃ！"
 
-	para "complete that"
-	line "#DEX!"
+	para "おっと！"
+	line "ながい<WO>した　ようじゃ！"
 
-	para "But I've stayed"
-	line "too long."
+	para "これから　コガネシティへ　い<TTE>"
+	line "いつも<NO>ラジオばんぐみの"
+	cont "しゅうろく<WO>せねば　ならんのだ！"
 
-	para "I have to get to"
-	line "GOLDENROD for my"
-	cont "usual radio show."
-
-	para "<PLAYER>, I'm"
-	line "counting on you!"
+	para "それじゃ　<PLAYER>くん！"
+	line "よろしく　たのんだぞ！"
 	done
 
 MrPokemonText_GimmeTheScale:
-	text "Hm? That SCALE!"
-	line "What's that?"
-	cont "A red GYARADOS?"
+	text "ん？　そ<NO>ウロコは？"
+	line "なぬ！　あかい　ギャラドス！？"
 
-	para "That's rare! "
-	line "I, I want it…"
+	para "そっ　それ<WA>めずらしい！"
+	line "ほ　ほしいのう<⋯>"
 
-	para "<PLAYER>, would you"
-	line "care to trade it?"
-
-	para "I can offer this"
-	line "EXP.SHARE I got"
-	cont "from PROF.OAK."
+	para "<PLAYER>くん"
+	line "わし<GA>オーキドはかせから　もらった"
+	cont "こ<NO>がくしゅうそうちと"
+	cont "こうかん　してくれんかね？"
 	done
 
 MrPokemonText_Disappointed:
-	text "That's disappoint-"
-	line "ing. That happens"
-	cont "to be very rare."
+	text "そうか　そりゃ　ざんねんだ"
+	line "かなり　めずらしいモノ　なんだが<⋯>"
 	done
 
 MrPokemonsHouse_ForeignMagazinesText:
-	text "It's packed with"
-	line "foreign magazines."
+	text "せかいじゅう<NO>ざっしが"
+	line "いっぱい　ならんでいる！"
 
-	para "Can't even read"
-	line "their titles…"
+	para "<⋯>　<⋯>"
+	line "タイトル<GA>よめない<⋯>"
 	done
 
 MrPokemonsHouse_BrokenComputerText:
-	text "It's a big com-"
-	line "puter. Hmm. It's"
-	cont "broken."
+	text "おおきな　コンピュータ！"
+	line "<⋯>　こわれてる　みたい"
 	done
 
 MrPokemonsHouse_StrangeCoinsText:
-	text "A whole pile of"
-	line "strange coins!"
-
-	para "Maybe they're from"
-	line "another country…"
+	text "みたこと<NO>ない　コインが"
+	line "いっぱい　ちらば<TTE>る！"
+	cont "どこか<NO>くに<NO>おかね　かな？"
 	done
 
 MrPokemonsHouse_MapEvents:

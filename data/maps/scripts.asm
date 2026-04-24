@@ -211,6 +211,41 @@ INCLUDE "maps/Route5SaffronGate.asm"
 INCLUDE "maps/Route5CleanseTagHouse.asm"
 
 
+SECTION "Map Scripts 7", ROMX
+
+INCLUDE "maps/Route32.asm"
+INCLUDE "maps/AzaleaPokecenter1F.asm"
+INCLUDE "maps/CharcoalKiln.asm"
+INCLUDE "maps/AzaleaMart.asm"
+INCLUDE "maps/KurtsHouse.asm"
+INCLUDE "maps/AzaleaGym.asm"
+INCLUDE "maps/VermilionFishingSpeechHouse.asm"
+INCLUDE "maps/VermilionPokecenter1F.asm"
+INCLUDE "maps/VermilionPokecenter2FBeta.asm"
+INCLUDE "maps/PokemonFanClub.asm"
+INCLUDE "maps/VermilionMagnetTrainSpeechHouse.asm"
+INCLUDE "maps/VermilionMart.asm"
+INCLUDE "maps/VermilionDiglettsCaveSpeechHouse.asm"
+INCLUDE "maps/VermilionGym.asm"
+INCLUDE "maps/Route6SaffronGate.asm"
+INCLUDE "maps/Route6UndergroundPathEntrance.asm"
+INCLUDE "maps/IndigoPlateauPokecenter1F.asm"
+INCLUDE "maps/WillsRoom.asm"
+INCLUDE "maps/KogasRoom.asm"
+INCLUDE "maps/BrunosRoom.asm"
+INCLUDE "maps/KarensRoom.asm"
+INCLUDE "maps/LancesRoom.asm"
+INCLUDE "maps/HallOfFame.asm"
+INCLUDE "maps/CherrygroveMart.asm"
+INCLUDE "maps/CherrygrovePokecenter1F.asm"
+INCLUDE "maps/CherrygroveGymSpeechHouse.asm"
+INCLUDE "maps/GuideGentsHouse.asm"
+INCLUDE "maps/CherrygroveEvolutionSpeechHouse.asm"
+INCLUDE "maps/Route30BerryHouse.asm"
+INCLUDE "maps/MrPokemonsHouse.asm"
+INCLUDE "maps/Route31VioletGate.asm"
+
+
 SECTION "Map Scripts 12", ROMX
 
 INCLUDE "maps/Route28.asm"
@@ -264,9 +299,6 @@ INCLUDE "maps/Route28SteelWingHouse.asm"
 ;INCLUDE "maps/DragonsDenB1F.asm"
 ;INCLUDE "maps/TohjoFalls.asm"
 
-
-;SECTION "Map Scripts 7", ROMX
-
 ;INCLUDE "maps/NewBarkTown.asm"
 ;INCLUDE "maps/CherrygroveCity.asm"
 ;INCLUDE "maps/VioletCity.asm"
@@ -295,7 +327,6 @@ INCLUDE "maps/Route28SteelWingHouse.asm"
 
 ;SECTION "Map Scripts 10", ROMX
 
-;INCLUDE "maps/Route32.asm"
 ;INCLUDE "maps/Route34.asm"
 ;INCLUDE "maps/Route35.asm"
 ;INCLUDE "maps/Route36.asm"
@@ -371,27 +402,8 @@ INCLUDE "maps/Route28SteelWingHouse.asm"
 ;INCLUDE "maps/Route43Gate.asm"
 
 
-;SECTION "Map Scripts 20", ROMX
-
-;INCLUDE "maps/AzaleaPokecenter1F.asm"
-;INCLUDE "maps/CharcoalKiln.asm"
-;INCLUDE "maps/AzaleaMart.asm"
-;INCLUDE "maps/KurtsHouse.asm"
-;INCLUDE "maps/AzaleaGym.asm"
-
-
 ;SECTION "Map Scripts 23", ROMX
 
-;INCLUDE "maps/VermilionFishingSpeechHouse.asm"
-;INCLUDE "maps/VermilionPokecenter1F.asm"
-;INCLUDE "maps/VermilionPokecenter2FBeta.asm"
-;INCLUDE "maps/PokemonFanClub.asm"
-;INCLUDE "maps/VermilionMagnetTrainSpeechHouse.asm"
-;INCLUDE "maps/VermilionMart.asm"
-;INCLUDE "maps/VermilionDiglettsCaveSpeechHouse.asm"
-;INCLUDE "maps/VermilionGym.asm"
-;INCLUDE "maps/Route6SaffronGate.asm"
-;INCLUDE "maps/Route6UndergroundPathEntrance.asm"
 ;INCLUDE "maps/RedsHouse1F.asm"
 ;INCLUDE "maps/RedsHouse2F.asm"
 ;INCLUDE "maps/BluesHouse.asm"
@@ -406,13 +418,6 @@ INCLUDE "maps/Route28SteelWingHouse.asm"
 ;INCLUDE "maps/PewterPokecenter1F.asm"
 ;INCLUDE "maps/PewterPokecenter2FBeta.asm"
 ;INCLUDE "maps/PewterSnoozeSpeechHouse.asm"
-;INCLUDE "maps/IndigoPlateauPokecenter1F.asm"
-;INCLUDE "maps/WillsRoom.asm"
-;INCLUDE "maps/KogasRoom.asm"
-;INCLUDE "maps/BrunosRoom.asm"
-;INCLUDE "maps/KarensRoom.asm"
-;INCLUDE "maps/LancesRoom.asm"
-;INCLUDE "maps/HallOfFame.asm"
 
 
 ;SECTION "Map Scripts 26", ROMX
@@ -449,17 +454,5 @@ INCLUDE "maps/Route28SteelWingHouse.asm"
 ;INCLUDE "maps/CianwoodPharmacy.asm"
 ;INCLUDE "maps/CianwoodPhotoStudio.asm"
 ;INCLUDE "maps/CianwoodLugiaSpeechHouse.asm"
-
-
-;SECTION "Map Scripts 32", ROMX
-
-;INCLUDE "maps/CherrygroveMart.asm"
-;INCLUDE "maps/CherrygrovePokecenter1F.asm"
-;INCLUDE "maps/CherrygroveGymSpeechHouse.asm"
-;INCLUDE "maps/GuideGentsHouse.asm"
-;INCLUDE "maps/CherrygroveEvolutionSpeechHouse.asm"
-;INCLUDE "maps/Route30BerryHouse.asm"
-;INCLUDE "maps/MrPokemonsHouse.asm"
-;INCLUDE "maps/Route31VioletGate.asm"
 
 ENDSECTION

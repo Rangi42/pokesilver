@@ -27,21 +27,17 @@ Route30BerryHouseBookshelf:
 	jumpstd MagazineBookshelfScript
 
 Route30BerrySpeechHouseMonEatBerriesText:
-	text "You know, #MON"
-	line "eat BERRIES."
+	text "#<GA>きのみ<WO>たべる<TTE>"
+	line "きみ　し<TTE>る？"
 
-	para "Well, my #MON"
-	line "got healthier by"
-	cont "eating a BERRY."
-
-	para "Here. I'll share"
-	line "one with you!"
+	para "だ<TTE>　うち<NO>#"
+	line "きのみ<WO>たべると　げんきになるぞ"
+	cont "そうだ！　きみにも　わけてあげよう"
 	done
 
 Route30BerrySpeechHouseCheckTreesText:
-	text "Check trees for"
-	line "BERRIES. They just"
-	cont "drop right off."
+	text "き<WO>しらべると"
+	line "きのみ<GA>おちてくるよ"
 	done
 
 Route30BerryHouse_MapEvents:

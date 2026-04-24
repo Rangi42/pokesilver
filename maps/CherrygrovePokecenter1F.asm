@@ -35,35 +35,30 @@ CherrygrovePokecenter1FTeacherScript:
 	end
 
 CherrygrovePokecenter1FFisherText:
-	text "It's great. I can"
-	line "store any number"
-
-	para "of #MON, and"
-	line "it's all free."
+	text "#　なんびき　あずけても　"
+	line "ただ　なの<WA>うれしいなあ"
 	done
 
 CherrygrovePokecenter1FGentlemanText:
-	text "That PC is free"
-	line "for any trainer"
-	cont "to use."
+	text "あそこ<NI>おかれた　<PC>は"
+	line "#<TRAINER>なら　だれでも"
+	cont "じゆう<NI>つか<TTE>　いいのだよ！"
 	done
 
 CherrygrovePokecenter1FTeacherText:
-	text "The COMMUNICATION"
-	line "CENTER upstairs"
-	cont "was just built."
+	text "２かい<NO>つうしんセンターは"
+	line "つい　さいきん　できたの"
 
-	para "But they're still"
-	line "finishing it up."
+	para "でも　まだ"
+	line "ちょうせいちゅう　です<TTE>"
 	done
 
 CherrygrovePokecenter1FTeacherText_CommCenterOpen:
-	text "The COMMUNICATION"
-	line "CENTER upstairs"
-	cont "was just built."
+	text "２かい<NO>つうしんセンターは"
+	line "つい　さいきん　できたの"
 
-	para "I traded #MON"
-	line "there already!"
+	para "あたし　さっそく"
+	line "#こうかん　しちゃっ<TA!>"
 	done
 
 CherrygrovePokecenter1F_MapEvents:

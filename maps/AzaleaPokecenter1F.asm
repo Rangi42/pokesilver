@@ -26,40 +26,33 @@ AzaleaPokecenter1FPokefanFScript:
 	jumptextfaceplayer AzaleaPokecenter1FPokefanFText
 
 AzaleaPokecenter1FGentlemanText:
-	text "Do your #MON"
-	line "know HM moves?"
+	text "きみの#　ひでんと　よばれる　"
+	line "わざ<WA>おぼえてるかね"
 
-	para "Those moves can"
-	line "be used even if"
-
-	para "your #MON has"
-	line "fainted."
+	para "#<WA>ひんし<NO>ときでも"
+	line "たたかう　げんき<GA>ない　だけで"
+	cont "ひでん<WA>つかえるそうだよ"
 	done
 
 AzaleaPokecenter1FFishingGuruText:
-	text "BILL's PC can"
-	line "store up to 20"
-	cont "#MON per BOX."
+	text "マサキの<PC>　つかうと"
+	line "１つ<NO>ボックス<NI>３０ぴきまで"
+	cont "#　あずけられるぞ！"
 	done
 
 AzaleaPokecenter1FPokefanFText:
-	text "Do you know about"
-	line "APRICORNS?"
+	text "あなた　ぼんぐり<TTE>　ごぞんじ？"
 
-	para "Crack one open,"
-	line "hollow it out and"
+	para "ぼんぐり<NO>きのみ<WO>わ<TTE>"
+	line "なかみ<WO>とりだして"
+	cont "とくしゅな　そうち<WO>うめこむの"
 
-	para "fit it with a"
-	line "special device."
+	para "すると　#<WO>つかまえることが"
+	line "できるよう<NI>なるの！"
 
-	para "Then you can catch"
-	line "#MON with it."
-
-	para "Before # BALLS"
-	line "were invented,"
-
-	para "everyone used"
-	line "APRICORNS."
+	para "モンスターボール<GA>うられるまで"
+	line "みんな　ぼんぐり　つか<TTE>"
+	cont "#<WO>つかまえてたのよ"
 	done
 
 AzaleaPokecenter1F_MapEvents:

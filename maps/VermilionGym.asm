@@ -103,159 +103,119 @@ VermilionGymStatue:
 	jumpstd GymStatue2Script
 
 LtSurgeIntroText:
-	text "SURGE: Hey, little"
-	line "boy!"
+	text "マチス『ヘーイ！"
+	line "プア　リトル　ボーイ！"
 
-	para "I have to hand it"
-	line "to you. It may not"
+	para "ミー<NI>たたかい<WO>いどむなんて"
+	line "ユー<WA>みのほどしらず！"
+	cont "ミー<NO>エレクトリック　#"
+	cont "ナンバー　ワン　ねー！"
 
-	para "be very smart to"
-	line "challenge me, but"
-	cont "it takes guts!"
+	para "せんじょうじゃ　まけたこと"
+	line "アリマセーン！！"
 
-	para "When it comes to"
-	line "electric #MON,"
-	cont "I'm number one!"
-
-	para "I've never lost on"
-	line "the battlefield."
-
-	para "I'll zap you just"
-	line "like I did my"
-	cont "enemies in war!"
+	para "ユーも　てき<NO>ソルジャー　みたく"
+	line "びりびり　シビレさせてあげるよ！"
 	done
 
 LtSurgeWinLossText:
-	text "SURGE: Arrrgh!"
-	line "You are strong!"
+	text "マチス『オー　ノー！"
+	line "ユー　<WA>ストロング！"
 
-	para "OK, boy. You get"
-	line "THUNDERBADGE!"
+	para "オッケー！"
+	line "オレンジバッジ　やるヨ！"
 	done
 
 ReceivedThunderBadgeText:
-	text "<PLAYER> received"
-	line "THUNDERBADGE."
+	text "<PLAYER><WA>マチスから"
+	line "オレンジバッジ<WO>もらっ<TA!>"
 	done
 
 LtSurgeThunderBadgeText:
-	text "SURGE: THUNDER-"
-	line "BADGE increases"
-	cont "#MON's speed. "
+	text "マチス『オレンジバッジ　も<TTE>ると"
+	line "ユー<NO>#　スピード　アップ！"
 
-	para "Consider it proof"
-	line "that you defeated"
-
-	para "me. You wear it"
-	line "proudly, hear?"
+	para "ミー<NI>かった　あかし　ネー！"
+	line "たいせつ　する　グッド！"
 	done
 
 LtSurgeFightDoneText:
-	text "SURGE: Hey, boy!"
-	line "Still slugging and"
-	cont "chugging away?"
+	text "マチス『ヘイ！　ボーイ！"
+	line "がんば<TTE>　ますかー？"
 
-	para "My #MON and I"
-	line "are still at it!"
+	para "ミーと　#も"
+	line "がんば<TTE>　マース！"
 	done
 
 GentlemanGregorySeenText:
-	text "You're here to"
-	line "defeat LT.SURGE?"
-
-	para "Not if I can help"
-	line "it!"
+	text "マチス　しょうさを"
+	line "たおし<NI>きたのか！"
+	cont "そう<WA>させないっ！"
 	done
 
 GentlemanGregoryBeatenText:
-	text "Sorry I failed"
-	line "you, LT.SURGE,"
-	cont "sir!"
+	text "もうしわけ　ありません！"
+	line "マチス　しょうさ！"
 	done
 
 GentlemanGregoryAfterBattleText:
-	text "When I was still"
-	line "in the army, LT."
-
-	para "SURGE saved my"
-	line "life."
+	text "ぐんたい<NI>いた　ころだ<⋯>"
+	line "<WATASHI><WA>マチス　しょうさに"
+	cont "いのち<WO>すくわれた<⋯>！"
 	done
 
 GuitaristVincentSeenText:
-	text "LT.SURGE recog-"
-	line "nized my potential"
-
-	para "with electric"
-	line "#MON."
-
-	para "Think you can beat"
-	line "me?"
+	text "でんき　つかい<NO>うでを"
+	line "マチスさん<NI>みとめられ<TA!>"
+	cont "オレ<NI>かてるかな！？"
 	done
 
 GuitaristVincentBeatenText:
-	text "Ooh, how shocking!"
+	text "ひゅー！　しびれ<TA!>"
 	done
 
 GuitaristVincentAfterBattleText:
-	text "If the GYM's traps"
-	line "were working, you"
-
-	para "would have been"
-	line "toast…"
+	text "ジム<NO>しかけ<GA>うごいてれば"
+	line "おまえなんか　たおせたのに<⋯>！"
 	done
 
 JugglerHortonSeenText:
-	text "I'm going to take"
-	line "you down! Prepare"
-	cont "to be shocked!"
+	text "おまえ<WA>オレ<GA>たおす！"
+	line "かくごしろっ！"
 	done
 
 JugglerHortonBeatenText:
-	text "Gwaaah!"
-	line "I was overpowered…"
+	text "ぐはあっ！"
+	line "つよいっ！"
 	done
 
 JugglerHortonAfterBattleText:
-	text "Don't get too com-"
-	line "fortable about"
-
-	para "beating me…"
-	line "LT.SURGE is tough."
+	text "オレ<NI>かったから<TTE>"
+	line "あんしん　するなよ<⋯>"
+	cont "マチス　しょうさ<WA>つよいぜ<⋯>"
 	done
 
 VermilionGymGuideText:
-	text "Yo! CHAMP in"
-	line "making!"
+	text "おーす！"
+	line "みらい<NO>チャンピオン！"
+	cont "あんた　ラッキーだよ！"
 
-	para "You lucked out"
-	line "this time."
+	para "いつも　マチス<WA>ようじんぶかく"
+	line "トラップ<WO>しかけてるけど"
+	cont "いま<WA>さいわい　こしょうちゅう！"
 
-	para "LT.SURGE is very"
-	line "cautious. He has"
-
-	para "traps set all over"
-	line "the GYM."
-
-	para "But--he-heh--the"
-	line "traps aren't"
-	cont "active right now."
-
-	para "You'll have no"
-	line "problem getting to"
-	cont "LT.SURGE."
+	para "こころ　おきなく"
+	line "マチスと　たたか<TTE>くれ！"
 	done
 
 VermilionGymGuideWinText:
-	text "Whew! That was an"
-	line "electrifying bout!"
-
-	para "It sure made me"
-	line "nervous."
+	text "エキサイティングな　しあいだ！"
+	line "きんちょう　したぜ！"
 	done
 
 VermilionGymTrashCanText:
-	text "Nope! Nothing here"
-	line "but trash."
+	text "ガサゴソ<⋯>！"
+	line "なか<WA>ゴミ　ばっかり！"
 	done
 
 VermilionGym_MapEvents:

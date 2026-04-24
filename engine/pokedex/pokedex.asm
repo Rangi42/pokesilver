@@ -1535,34 +1535,34 @@ Pokedex_AIUEOMode:
 	ld hl, wPokedexOrder
 	ld de, GojuonPokedexOrder
 	ld c, NUM_POKEMON
-.loop1_aiueo
+.loop1
 	push bc
 	ld a, [de]
 	ld [wTempSpecies], a
 	call Pokedex_CheckSeen
-	jr z, .skip_aiueo
+	jr z, .skip
 	ld a, [wTempSpecies]
 	ld [hli], a
 	ld a, [wDexListingEnd]
 	inc a
 	ld [wDexListingEnd], a
 
-.skip_aiueo
+.skip
 	inc de
 	pop bc
 	dec c
-	jr nz, .loop1_aiueo
+	jr nz, .loop1
 	ld a, [wDexListingEnd]
 	ld c, 0
-.loop2_aiueo
+.loop2
 	cp NUM_POKEMON
-	jr z, .done_aiueo
+	jr z, .done
 	ld [hl], c
 	inc hl
 	inc a
-	jr .loop2_aiueo
+	jr .loop2
 
-.done_aiueo
+.done
 	ret
 
 INCLUDE "data/pokemon/dex_order_alpha.asm"

@@ -79,55 +79,46 @@ KarensRoom_EnterMovement:
 	step_end
 
 KarenScript_KarenBeforeText:
-	text "I am KAREN of the"
-	line "ELITE FOUR."
+	text "あたくし　してんのう<NO>カリン！"
 
-	para "You're <PLAYER>?"
-	line "How amusing."
+	para "あなた<GA><PLAYER>ね"
+	line "ふうん　なかなか　おもしろそうね"
 
-	para "I love dark-type"
-	line "#MON."
+	para "あたくし<GA>あいしてるのは"
+	line "あくタイプ<NO>#！"
 
-	para "I find their wild,"
-	line "tough image to be"
+	para "ワイルドで　タフな　かんじ"
+	line "すてき　でしょ？"
+	cont "それ<NI>とー<TTE>も　つよいのよ"
 
-	para "so appealing. And"
-	line "they're so strong."
+	para "あなた　あいて<NI>なるのかしら？"
+	line "がんば<TTE>　あたくしを"
+	cont "たのしませて　ほしいものね"
 
-	para "Think you can take"
-	line "them? Just try to"
-	cont "entertain me."
-
-	para "Let's go."
+	para "じゃ　はじめましょ！"
 	done
 
 KarenScript_KarenBeatenText:
-	text "Well, aren't you"
-	line "good. I like that"
-	cont "in a trainer."
+	text "フウン　やるじゃない"
+	line "そーゆー<NO>すてき　よ"
 	done
 
 KarenScript_KarenDefeatText:
-	text "Strong #MON."
+	text "つよい　#"
 
-	para "Weak #MON."
+	para "よわい　#"
 
-	para "That is only the"
-	line "selfish perception"
-	cont "of people."
+	para "そんな<NO>ひと<NO>か<TTE>"
 
-	para "Truly skilled"
-	line "trainers should"
+	para "ほんとう<NI>つよい　<TRAINER>なら"
+	line "すきな　#で"
+	cont "かてるよう<NI>がんばるべき"
 
-	para "try to win with"
-	line "their favorites."
+	para "いいわよ　あなた"
+	line "だいじなこと　わか<TTE>るわね"
 
-	para "I like your style."
-	line "You understand"
-	cont "what's important."
-
-	para "Go on--the CHAM-"
-	line "PION is waiting."
+	para "さき<NI>すすみなさい"
+	line "チャンピオン<GA>あなた<WO>ま<TTE>るわ"
 	done
 
 KarensRoom_MapEvents:

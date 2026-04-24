@@ -27,32 +27,18 @@ Route6SaffronGuardScript:
 	end
 
 Route6SaffronGuardWelcomeText:
-	text "Welcome to SAFFRON"
-	line "CITY, home of the"
-	cont "MAGNET TRAIN!"
+	text "リニア　モーターカーのまち"
+	line "ヤマブキ　シティへ　ようこそ！"
 
-	para "…That's what I'd"
-	line "normally say, but"
-
-	para "the MAGNET TRAIN"
-	line "isn't running now."
-
-	para "It's not getting"
-	line "any electricity"
-
-	para "because there's"
-	line "something wrong"
-
-	para "with the POWER"
-	line "PLANT."
+	para "<⋯>と　いいたいけど"
+	line "はつでんしょで　じこ<GA>あったらしく"
+	cont "でんき<GA>おくられて　こないから"
+	cont "リニア<GA>うごいて　いないんだ"
 	done
 
 Route6SaffronGuardMagnetTrainText:
-	text "The MAGNET TRAIN"
-	line "is the most famous"
-
-	para "thing about SAF-"
-	line "FRON."
+	text "ヤマブキで　ゆうめいな　ものは"
+	line "やっぱり　リニア　だね！"
 	done
 
 Route6SaffronGate_MapEvents:

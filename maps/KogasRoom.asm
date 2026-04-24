@@ -79,52 +79,40 @@ KogasRoom_EnterMovement:
 	step_end
 
 KogaScript_KogaBeforeText:
-	text "Fwahahahaha!"
+	text "<⋯>　ファ　ファ　ファ！"
 
-	para "I am KOGA of the"
-	line "ELITE FOUR."
+	para "せっしゃ<WA>してんのう<NO>キョウ！"
+	line "いま<NI>いきる　しのび　よ！"
 
-	para "I live in shadows,"
-	line "a ninja!"
+	para "せっしゃ<NO>たたかいかた"
+	line "ひとすじなわ　で<WA>いかんぞ！"
 
-	para "My intricate style"
-	line "will confound and"
-	cont "destroy you!"
+	para "まどわし　ねむらせ"
+	line "どく<WO>くらわせる<⋯>"
 
-	para "Confusion, sleep,"
-	line "poison…"
+	para "まさ<NI>へんげんじざい"
+	line "あやし<NO>わざ　よ！"
 
-	para "Prepare to be the"
-	line "victim of my sin-"
-	cont "ister technique!"
+	para "<⋯>　ファ　ファ　ファ！"
 
-	para "Fwahahahaha!"
-
-	para "#MON is not"
-	line "merely about brute"
-
-	para "force--you shall"
-	line "see soon enough!"
+	para "ちから　だけで<WA>およばない　"
+	line "#<NO>おくぶかさ"
+	cont "たっぷりと　あじわう<GA>よい！"
 	done
 
 KogaScript_KogaBeatenText:
-	text "Ah!"
-	line "You have proven"
-	cont "your worth!"
+	text "おお！"
+	line "おぬし　やりおるな！"
 	done
 
 KogaScript_KogaDefeatText:
-	text "I subjected you to"
-	line "everything I could"
-	cont "muster."
+	text "もてる　すべて<WO>だしつくした"
 
-	para "But my efforts"
-	line "failed. I must"
-	cont "hone my skills."
+	para "それで　かなわぬなら"
+	line "さら<NI>しょうじん　するだけよ"
 
-	para "Go on to the next"
-	line "room, and put your"
-	cont "abilities to test!"
+	para "おぬし！　つぎ<NO>へや<NI>すすみ"
+	line "じぶん<NO>じつりょく　ためすがよい！"
 	done
 
 KogasRoom_MapEvents:

@@ -41,32 +41,23 @@ CherrygroveMartYoungsterScript:
 	jumptextfaceplayer CherrygroveMartYoungsterText
 
 CherrygroveMartCooltrainerMText:
-	text "They're fresh out"
-	line "of # BALLS!"
-
-	para "When will they get"
-	line "more of them?"
+	text "モンスターボール　うりきれ　だ<TTE>！"
+	line "つぎ<NI>かえるの<WA>いつかなあ"
 	done
 
 CherrygroveMartCooltrainerMText_PokeBallsInStock:
-	text "# BALLS are in"
-	line "stock! Now I can"
-	cont "catch #MON!"
+	text "モンスターボール<GA>かえる！"
+	line "これで　#　つかまえまくりだね"
 	done
 
 CherrygroveMartYoungsterText:
-	text "When I was walking"
-	line "in the grass, a"
+	text "くさむら　あるいてたら"
+	line "むし#<NI>どく　くらっ<TA!>"
 
-	para "bug #MON poi-"
-	line "soned my #MON!"
+	para "しかも　そのまま　あるいてたら"
+	line "#　たおれ<TA!>"
 
-	para "I just kept going,"
-	line "but then my"
-	cont "#MON fainted."
-
-	para "You should keep an"
-	line "ANTIDOTE with you."
+	para "どくけし<WA>も<TTE>たほう<GA>いいよ"
 	done
 
 CherrygroveMart_MapEvents:

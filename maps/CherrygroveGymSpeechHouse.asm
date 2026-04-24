@@ -17,29 +17,20 @@ CherrygroveGymSpeechHouseBookshelf:
 	jumpstd PictureBookshelfScript
 
 CherrygroveGymSpeechHousePokefanMText:
-	text "You're trying to"
-	line "see how good you"
+	text "#<TRAINER>　として"
+	line "じつりょく<WO>たしかめるのか？"
 
-	para "are as a #MON"
-	line "trainer?"
-
-	para "You better visit"
-	line "the #MON GYMS"
-
-	para "all over JOHTO and"
-	line "collect BADGES."
+	para "だったら　ジョウトちほうの"
+	line "かくち<NI>ある　#ジムで"
+	cont "バッジ<WO>あつめる　ことだな！"
 	done
 
 CherrygroveGymSpeechHouseBugCatcherText:
-	text "When I get older,"
-	line "I'm going to be a"
-	cont "GYM LEADER!"
+	text "ぼく　おおきくなったら"
+	line "がんば<TTE>　ジムリーダー<NI>なる！"
 
-	para "I make my #MON"
-	line "battle with my"
-
-	para "friend's to make"
-	line "them tougher!"
+	para "そのため　ともだち<NO>#と"
+	line "たたかわせて　きたえるんだ！"
 	done
 
 CherrygroveGymSpeechHouse_MapEvents:

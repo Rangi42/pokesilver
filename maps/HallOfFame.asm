@@ -63,49 +63,26 @@ HallOfFame_SlowlyApproachMachine:
 	step_end
 
 HallOfFame_LanceText:
-	text "LANCE: It's been a"
-	line "long time since I"
-	cont "last came here."
+	text "ワタル『<⋯>　こ<NO>へやに"
+	line "はいるのも　ひさしぶり　だな"
 
-	para "This is where we"
-	line "honor the LEAGUE"
+	para "<KOKO_WA>リーグ　チャンピオンの"
+	line "えいこう<WO>たたえるため"
+	cont "はげしい　たたかい<WO>かちぬいた"
+	cont "#たち<WO>えいえんに"
+	cont "きろくする　ばしょ　なんだ！"
 
-	para "CHAMPIONS for all"
-	line "eternity."
+	para "いま　ここに"
+	line "#へ<NO>やさしさと　しんらい"
 
-	para "Their courageous"
-	line "#MON are also"
-	cont "inducted."
+	para "じぶんへ<NO>つよさと　きびしさ"
 
-	para "Here today, we"
-	line "witnessed the rise"
+	para "だいじなもの<WO>もった　あたらしい"
+	line "リーグ　チャンピオン<GA>うまれ<TA!>"
 
-	para "of a new LEAGUE"
-	line "CHAMPION--a"
-
-	para "trainer who feels"
-	line "compassion for,"
-
-	para "and trust in, his"
-	line "#MON."
-
-	para "A trainer who"
-	line "succeeded through"
-
-	para "perseverance and"
-	line "determination."
-
-	para "The new LEAGUE"
-	line "CHAMPION who has"
-
-	para "all the makings"
-	line "of greatness!"
-
-	para "<PLAYER>, allow me"
-	line "to register you"
-
-	para "and your partners"
-	line "as CHAMPIONS!"
+	para "さあ　<PLAYER>くん！"
+	line "きみと　きみ<NO>パートナーを"
+	cont "きろく　しよう！"
 	done
 
 HallOfFame_MapEvents:

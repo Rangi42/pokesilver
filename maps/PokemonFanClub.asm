@@ -119,179 +119,153 @@ PokemonFanClubBraggingSign:
 	jumptext PokemonFanClubBraggingSignText
 
 PokemonFanClubChairmanDidYouVisitToHearAboutMyMonText:
-	text "I'm the CHAIRMAN"
-	line "of the #MON FAN"
-	cont "CLUB."
+	text "#　だいすき　クラブの"
+	line "かいちょう<WA>わし　じゃ！"
 
-	para "I've raised over"
-	line "150 #MON."
+	para "そだてた　#は"
+	line "１５０ぴき<WO>こえとる！"
 
-	para "I'm very fussy"
-	line "when it comes to"
-	cont "#MON."
+	para "#<NI>かんしては"
+	line "ホント　うるさい　ですぞ！"
 
-	para "Did you visit just"
-	line "to hear about my"
-	cont "#MON?"
+	para "きみ<WA>わし<NO>#　じまんを"
+	line "きき<NI>きた<NO>かね？"
 	done
 
 PokemonFanClubChairmanRapidashText:
-	text "Good!"
-	line "Then listen up!"
+	text "そうか！"
+	line "で<WA>さっそく　はじめるか！"
 
-	para "So… my favorite"
-	line "RAPIDASH…"
+	para "あのな<⋯>　わし<NO>おきにいりの"
+	line "ギャロップがな<⋯>　<⋯>"
 
-	para "It… cute… lovely…"
-	line "smart… unbearably…"
-	cont "plus… amazing… oh…"
-	cont "you think so?…"
-	cont "Too much… wild…"
-	cont "beautiful… kindly…"
-	cont "love it!"
+	para "<⋯>　でな<⋯>　が<⋯>"
+	line "<⋯>　<⋯>　かわいくてな<⋯>"
+	cont "たまらん<⋯>　くう<⋯>"
+	cont "<⋯>　さらに<⋯>　もう<⋯>"
+	cont "すごすぎ<⋯>　<⋯>　で<⋯>"
+	cont "<⋯>　そう　おもうか<⋯>"
+	cont "<⋯>　はー！"
 
-	para "Hug it… when…"
-	line "sleeping… warm and"
-	cont "cuddly… Oh, and…"
-	cont "spectacular…"
-	cont "ravishing… simply"
-	cont "divine…"
-	cont "Oops! Look at the"
-	cont "time! I've kept"
-	cont "you too long!"
+	para "<⋯>　<⋯>　だきしめて<⋯>"
+	line "ねるときも<⋯>"
+	cont "おフロのときも<⋯>"
+	cont "<⋯>　じゃろ<⋯>　<⋯>"
+	cont "<⋯>　<⋯>　すばらし<⋯>！"
+	cont "<⋯>　うつくし<⋯>"
+	cont "<⋯>　<⋯>　ありゃ！"
+	cont "もう　こんな　じかんか！"
+	cont "ちょっと　しゃべり　すぎたわい！"
 	done
 
 PokemonFanClubChairmanIWantYouToHaveThisText:
-	text "Thanks for hearing"
-	line "me out. I want you"
-	cont "to have this!"
+	text "わし<NO>#　じまんを"
+	line "おとなしく　きいてた　おれいに"
+	cont "<⋯>これ<WA>きもち　じゃ！"
 	done
 
 PokemonFanClubChairmanItsARareCandyText:
-	text "It's a RARE CANDY"
-	line "that makes #MON"
-	cont "stronger."
+	text "#<GA>つよくなる"
+	line "ふしぎな　アメ　じゃ！"
 
-	para "I prefer making my"
-	line "#MON stronger"
+	para "いっしょ<NI>たたか<TTE>"
+	line "つよくなる　ほうが"
+	cont "わし<WA>すきなのでな"
 
-	para "by battling, so"
-	line "you can have it."
+	para "そ<NO>アメ<WA>きみ<NI>あげよう！"
 	done
 
 PokemonFanClubChairmanMoreTalesToTellText:
-	text "Hello, <PLAYER>!"
+	text "やー　やー　<PLAYER>くん！"
 
-	para "Did you come see"
-	line "me about my #-"
-	cont "MON again?"
+	para "また　わし<NO>#　じまんを"
+	line "きき<NI>きた<NO>かね！"
 
-	para "No? Oh… I had more"
-	line "tales to tell…"
+	para "<⋯>　え？　ちがう？"
+	line "なんじゃ<⋯>　つまらん"
 	done
 
 PokemonFanClubChairmanHowDisappointingText:
-	text "How disappointing…"
-
-	para "Come back if you"
-	line "want to listen."
+	text "なんじゃ　つまらん<⋯>"
+	line "きく　き<NI>なったら　きてくれい！"
 	done
 
 PokemonFanClubReceptionistText:
-	text "Our CHAIRMAN is"
-	line "very vocal when it"
-	cont "comes to #MON…"
+	text "うち<NO>かいちょうは"
+	line "ホント　#<NI>うるさいの！"
 	done
 
 PokemonFanClubClefairyGuyClefairyIsSoAdorableText:
-	text "I love the way"
-	line "CLEFAIRY waggles"
-
-	para "its finger when"
-	line "it's trying to use"
-
-	para "METRONOME."
-	line "It's so adorable!"
+	text "ゆび<WO>ふ<TTE>る"
+	line "しぐさ　と　いったら<⋯>"
+	cont "むふー！"
+	cont "ピッピ　たまらーん！"
 	done
 
 PokemonFanClubClefairyGuyMakingDoWithADollIFoundText:
-	text "I love CLEFAIRY,"
-	line "but I could never"
+	text "ピッピ<GA>だいすき　だけど"
+	line "どうしても　つかまえられなくて"
 
-	para "catch one. So I'm"
-	line "making do with a"
-
-	para "# DOLL that I"
-	line "found."
+	para "しょうがない　から"
+	line "ひろった　ピッピにんぎょうで"
+	cont "ガマン　してるんだ<⋯>"
 	done
 
 PokemonFanClubClefairyGuyTakeThisDollBackToGirlText:
-	text "Oh, I see now. The"
-	line "girl who lost this"
+	text "そうか　こ<NO>にんぎょうを"
+	line "おとした　おんなのこが"
+	cont "かなしんで　いるんだ<⋯>"
 
-	para "# DOLL is sad…"
+	para "わかったよ！"
+	line "ピッピにんぎょう<WO>そのこに"
+	cont "かえしてあげて！"
 
-	para "OK. Could you take"
-	line "this # DOLL"
-
-	para "back to that poor"
-	line "little girl?"
-
-	para "I'll befriend a"
-	line "real CLEFAIRY on"
-
-	para "my own one day."
-	line "No worries!"
+	para "ぼく<WA>じぶん<NO>ちからで"
+	line "ピッピと　ともだち<NI>なるよ！"
 	done
 
 PokemonFanClubPlayerReceivedDollText:
-	text "<PLAYER> received"
-	line "# DOLL."
+	text "<PLAYER>は"
+	line "ピッピにんぎょう<WO>あずかっ<TA!>"
 	done
 
 PokemonFanClubClefairyGuyGoingToGetARealClefairyText:
-	text "You watch. I'm"
-	line "going to get a"
-
-	para "real CLEFAIRY as"
-	line "my friend."
+	text "ほんもの<NO>ピッピと"
+	line "ぜったい<NI>ともだち<NI>なるぞ！"
 	done
 
 PokemonFanClubClefairyGuyPackIsJammedFullText:
-	text "Your PACK is"
-	line "jammed full."
+	text "きみ<NO>リュック"
+	line "いっぱい　だよ！"
 	done
 
 PokemonFanClubTeacherText:
-	text "Look at my darling"
-	line "BAYLEEF!"
+	text "みて　みて！"
+	line "<WATASHI><NO>ベイリーフ！"
 
-	para "The leaf on its"
-	line "head is so cute!"
+	para "あたま<NO>はっぱが"
+	line "すっごく　キュート！"
 	done
 
 PokemonFanClubClefairyDollText:
-	text "It's a CLEFAIRY!"
-	line "Huh?"
+	text "ピッピだ！"
+	line "<⋯>　？"
 
-	para "Oh, right. It's a"
-	line "CLEFAIRY #"
-	cont "DOLL."
+	para "なんだ　ピッピにんぎょう　だ！"
 	done
 
 PokemonFanClubBayleefText:
-	text "BAYLEEF: Li liif!"
+	text "ベイリーフ『り　りーふ！"
 	done
 
 PokemonFanClubListenSignText:
-	text "Let's all listen"
-	line "politely to other"
-	cont "trainers."
+	text "かいぬし<NO>じまん　ばなしには"
+	line "しずか<NI>みみ<WO>かたむけよう！"
 	done
 
 PokemonFanClubBraggingSignText:
-	text "If someone brags,"
-	line "brag right back!"
+	text "ひと<NO>じまん　ばなしは"
+	line "１０ばい　にして　かえそう！"
 	done
 
 PokemonFanClub_MapEvents:

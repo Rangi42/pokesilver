@@ -312,162 +312,128 @@ KurtsHouseKurtGoAroundPlayerThenExitHouseMovement:
 	step_end
 
 KurtsHouseKurtMakingBallsMustWaitText:
-	text "Hm? Who are you?"
+	text "おう　おまえ<WA>だれや？"
 
-	para "<PLAYER>, eh? You"
-	line "want me to make"
-	cont "some BALLS?"
+	para "そうか　<PLAYER>　いうんか"
+	line "ボール<WO>つく<TTE>ほしいんか？"
+	cont "わるい<GA>それどころ　ちゃうんや"
 
-	para "Sorry, but that'll"
-	line "have to wait."
+	para "<ROCKET>　し<TTE>るか？"
+	line "いや　しらなくてもええ"
+	cont "はなし<WO>すすめるぞ"
 
-	para "Do you know TEAM"
-	line "ROCKET? Ah, don't"
+	para "<ROCKET>　いうのは"
+	line "#<WO>むりやり　わるさにつかう"
+	cont "ろくでもない　れんちゅうや"
 
-	para "worry. I'll tell"
-	line "you anyhow."
+	para "３ねんまえに"
+	line "かいさん　したはず　なんやが<⋯>"
 
-	para "TEAM ROCKET's an"
-	line "evil gang that"
+	para "とにかく　そいつらが"
+	line "いどで　ヤドン<NO>シッポを"
+	cont "き<TTE><WA>うりさばいとるんや"
 
-	para "uses #MON for"
-	line "their dirty work."
+	para "だから　わし<GA>い<TTE>"
+	line "ちと　こらしめたるんや！"
 
-	para "They're supposed"
-	line "to have disbanded"
-	cont "three years ago."
-
-	para "Anyway, they're at"
-	line "the WELL, cutting"
-
-	para "off SLOWPOKETAILS"
-	line "for sale!"
-
-	para "So I'm going to"
-	line "go give them a"
-	cont "lesson in pain!"
-
-	para "Hang on, SLOWPOKE!"
-	line "Old KURT is on his"
-	cont "way!"
+	para "よーし！　ま<TTE>ろ　ヤドン！"
+	line "おとこガンテツ<GA>たすけたるぞ！"
 	done
 
 KurtsHouseKurtHonoredToMakeBallsText:
-	text "KURT: Hi, <PLAYER>!"
+	text "ガンテツ『おう　<PLAYER>"
+	line "いどで<NO>おまえさん<NO>はたらき"
+	cont "そりゃもう　みごと<NO>ひとこと！"
 
-	para "You handled your-"
-	line "self like a real"
-	cont "hero at the WELL."
+	para "わし<WA>おまえさん<GA>きにいっ<TA!>"
+	line "おまえみたいな　<TRAINER>にやったら"
+	cont "ボール<WO>つく<TTE>やりたいわい"
 
-	para "I like your style!"
-
-	para "I would be honored"
-	line "to make BALLS for"
-
-	para "a trainer like"
-	line "you."
-
-	para "This is all I have"
-	line "now, but take it."
+	para "いま　てもと<NI>あるのは"
+	line "これだけや<GA>とりあえず　も<TTE>け！"
 	done
 
 KurtsHouseKurtBallsFromApricornsText:
-	text "KURT: I make BALLS"
-	line "from APRICORNS."
+	text "ガンテツ『わし<WA>ぼんぐり　つか<TTE>"
+	line "とくせい<NO>ボール<WO>つくっとる"
 
-	para "Collect them from"
-	line "trees and bring"
-	cont "'em to me."
-
-	para "I'll make BALLS"
-	line "out of them."
+	para "そこいら<NO>ぼんぐり<NO>き<WO>しらべ"
+	line "み<WO>あつめてくると　ええぞ"
+	cont "そしたら　わし<GA>ボールつくったる"
 	done
 
 KurtsHouseKurtAskYouHaveAnApricornText:
-	text "KURT: You have an"
-	line "APRICORN for me?"
+	text "ガンテツ『おおっ"
+	line "ぼんぐり　もっとるやないか！"
 
-	para "Fine! I'll turn it"
-	line "into a BALL."
+	para "よっしゃ　ボール　つくったるわ！"
 	done
 
 KurtsHouseKurtItWillTakeADayText:
-	text "KURT: It'll take a"
-	line "day to make you a"
-
-	para "BALL. Come back"
-	line "for it later."
+	text "ガンテツ『ボール<NI>するまで"
+	line "１にちほど　かかるからの"
+	cont "また　とり<NI>くる<GA>ええぞ"
 	done
 
 KurtsHouseKurtThatsALetdownText:
-	text "KURT: Oh…"
-	line "That's a letdown."
+	text "ガンテツ『そうか<⋯>"
+	line "なんか　がっかり　したわい"
 	done
 
 KurtsHouseKurtDontBotherMeText:
-	text "KURT: I'm working!"
-	line "Don't bother me!"
+	text "ガンテツ『いま　つくっとるわい"
+	line "じゃま<WO>するでないわっ！"
 	done
 
 KurtsHouseKurtJustFinishedYourBallText:
-	text "KURT: Ah, <PLAYER>!"
-	line "I just finished"
-	cont "your BALL. Here!"
+	text "ガンテツ『おお　<PLAYER>か"
+	line "いまな　ボール<GA>できたばかりや"
+	cont "も<TTE>いく<GA>ええぞ！"
 	done
 
 KurtsHouseKurtTurnedOutGreatText:
-	text "KURT: That turned"
-	line "out great."
+	text "ガンテツ『かいしん<NO>できじゃ！"
 
-	para "Try catching"
-	line "#MON with it."
+	para "それで　つかまえられるか　どうか"
+	line "#と　しょうぶ　してみい！"
 	done
 
 KurtsGranddaughterSlowpokeGoneText:
-	text "The SLOWPOKE are"
-	line "gone… Were they"
-
-	para "taken away by bad"
-	line "people?"
+	text "ヤドン　いなくなっちゃった<⋯>"
+	line "どうしよう<⋯>"
+	cont "わるい　ひと<NI>つれさられたの？"
 	done
 
 KurtsGranddaughterLonelyText:
-	text "Grandpa's gone…"
-	line "I'm so lonely…"
+	text "おじいちゃん　どこ　いったの<⋯>？"
+	line "あたし　さみしいよう<⋯>"
 	done
 
 KurtsGranddaughterSlowpokeBackText:
-	text "The SLOWPOKE my"
-	line "Dad gave me came"
-
-	para "back! Its TAIL is"
-	line "growing back too!"
+	text "おとうさん<NI>もらった"
+	line "あたし<NO>ヤドン　かえ<TTE>き<TA!>"
+	cont "シッポも　また　はえてくるの！"
 	done
 
 KurtsGranddaughterDadText:
-	text "Dad works at SILPH"
-	line "where he studies"
-	cont "# BALLS."
+	text "おとうさん　シルフ<TTE>　かいしゃで"
+	line "あたらしい　モンスターボールの"
+	cont "けんきゅう　してるの"
 
-	para "I have to stay"
-	line "home with Grandpa"
-	cont "and SLOWPOKE."
+	para "そのあいだ　あたしは"
+	line "おじいちゃんと　ヤドンと　おるすばん"
 	done
 
 KurtsHouseSlowpokeText:
-	text "SLOWPOKE: …"
-	line "Yawn?"
+	text "ヤドン『<⋯>　<⋯>　やあん？"
 	done
 
 KurtsHouseOakPhotoText:
-	text "…A young PROF."
-	line "OAK?"
+	text "<⋯>　わかいころ<NO>オーキドはかせ？"
 	done
 
 KurtsHouseCelebiStatueText:
-	text "It's a statue of"
-	line "the forest's pro-"
-	cont "tector."
+	text "もりのかみさま<WO>まつ<TTE>ある"
 	done
 
 KurtsHouse_MapEvents:
