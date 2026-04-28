@@ -70,9 +70,6 @@ DEF NUM_RADIO_CHANNELS EQU const_value
 	const OAKS_POKEMON_TALK_13   ; 3d
 	const OAKS_POKEMON_TALK_14   ; 3e
 	const RADIO_SCROLL           ; 3f
-	const POKEDEX_SHOW_6         ; 40
-	const POKEDEX_SHOW_7         ; 41
-	const POKEDEX_SHOW_8         ; 42
 DEF NUM_RADIO_SEGMENTS EQU const_value
 
 ; PlayRadioStationPointers indexes (see engine/pokegear/pokegear.asm)

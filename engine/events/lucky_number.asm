@@ -96,9 +96,7 @@ CheckForLuckyNumberWinners:
 .SkipBox:
 	inc c
 	ld a, c
-
-	; BUG: The Lucky Number Show does not find winning ID numbers in inactive boxes 10-14 (see docs/bugs_and_glitches.md)
-	cp NUM_BOXES_JP
+	cp NUM_BOXES
 	jr c, .BoxesLoop
 
 	call CloseSRAM
@@ -200,12 +198,24 @@ endr
 	assert_table_length NUM_BOXES
 
 .LuckyNumberMatchPartyText:
-	text_far _LuckyNumberMatchPartyText
-	text_end
+	text "おめでとうございます！　あなたが"
+	line "つれている　@"
+	text_ram wStringBuffer1
+	text "ちゃんの"
+
+	para "アイディナンバー<GA>みごとに"
+	line "いっちしました"
+	prompt
 
 .LuckyNumberMatchPCText:
-	text_far _LuckyNumberMatchPCText
-	text_end
+	text "おめでとうございます！　<PC>に"
+	line "あずけている　@"
+	text_ram wStringBuffer1
+	text "ちゃんの"
+
+	para "アイディナンバー<GA>みごとに"
+	line "いっちしました"
+	prompt
 
 PrintTodaysLuckyNumber:
 	ld hl, wStringBuffer3

@@ -42,7 +42,7 @@ CheckPartyFullAfterContest:
 	call GetPokemonName
 	ld hl, wStringBuffer1
 	ld de, wMonOrItemNameBuffer
-	ld bc, MON_NAME_LENGTH
+	ld bc, NAME_LENGTH
 	call CopyBytes
 	call GiveANickname_YesNo
 	jr c, .Party_SkipNickname
@@ -104,7 +104,7 @@ CheckPartyFullAfterContest:
 	ld a, BANK(sBoxMonNicknames)
 	call OpenSRAM
 	ld de, sBoxMonNicknames
-	ld bc, MON_NAME_LENGTH
+	ld bc, NAME_LENGTH
 	call CopyBytes
 	call CloseSRAM
 
@@ -126,5 +126,8 @@ GiveANickname_YesNo:
 	jp YesNoBox
 
 CaughtAskNicknameText:
-	text_far _CaughtAskNicknameText
-	text_end
+	text "もらった　@"
+	text_ram wStringBuffer1
+	text "に"
+	line "ニックネームを　つけますか？"
+	done

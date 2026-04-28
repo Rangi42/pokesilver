@@ -92,15 +92,12 @@ RadioJumptable:
 	dw OaksPKMNTalk13    ; $3d
 	dw OaksPKMNTalk14    ; $3e
 	dw RadioScroll       ; $3f
-; More Pokemon Channel stuff
-	dw PokedexShow6      ; $40
-	dw PokedexShow7      ; $41
-	dw PokedexShow8      ; $42
 	assert_table_length NUM_RADIO_SEGMENTS
 
 PrintRadioLine:
 	ld [wNextRadioLine], a
 	ld hl, wRadioText
+	call ReplacePeriodsWithSpaces
 	ld a, [wNumRadioLinesPrinted]
 	cp 2
 	jr nc, .print
@@ -122,14 +119,14 @@ PrintRadioLine:
 	ld [wRadioTextDelay], a
 	ret
 
-ReplacePeriodsWithSpaces: ; unreferenced
+ReplacePeriodsWithSpaces:
 	push hl
 	ld b, SCREEN_WIDTH * 2
 .loop
 	ld a, [hl]
-	cp '.'
+	cp '。'
 	jr nz, .next
-	ld [hl], ' '
+	ld [hl], '　'
 .next
 	inc hl
 	dec b
@@ -242,7 +239,7 @@ endr
 	call GetPokemonName
 	ld hl, wStringBuffer1
 	ld de, wMonOrItemNameBuffer
-	ld bc, MON_NAME_LENGTH
+	ld bc, NAME_LENGTH
 	call CopyBytes
 
 	; Now that we've chosen our wild Pokemon,
@@ -274,28 +271,38 @@ OaksPKMNTalk6:
 	jp NextRadioLine
 
 OPT_IntroText1:
-	text_far _OPT_IntroText1
-	text_end
+	text_start
+	line "クルミ『オーキドはかせの"
+	done
 
 OPT_IntroText2:
-	text_far _OPT_IntroText2
-	text_end
+	text_start
+	line "#こうざ！"
+	done
 
 OPT_IntroText3:
-	text_far _OPT_IntroText3
-	text_end
+	text_start
+	line "おあいて<WA>わたし　クルミでーす！"
+	done
 
 OPT_OakText1:
-	text_far _OPT_OakText1
-	text_end
+	text_start
+	line "オーキド『@"
+	text_ram wMonOrItemNameBuffer
+	text "は"
+	done
 
 OPT_OakText2:
-	text_far _OPT_OakText2
-	text_end
+	text_start
+	line "@"
+	text_ram wStringBuffer1
+	text "に"
+	done
 
 OPT_OakText3:
-	text_far _OPT_OakText3
-	text_end
+	text_start
+	line "せいそくして　おるようじゃ"
+	done
 
 OaksPKMNTalk7:
 	ld a, [wCurPartySpecies]
@@ -306,8 +313,11 @@ OaksPKMNTalk7:
 	jp NextRadioLine
 
 OPT_MaryText1:
-	text_far _OPT_MaryText1
-	text_end
+	text_start
+	line "クルミ『@"
+	text_ram wStringBuffer1
+	text "って　"
+	done
 
 OaksPKMNTalk8:
 	; 0-15 are all valid indexes into .Adverbs,
@@ -347,68 +357,84 @@ OaksPKMNTalk8:
 	assert_table_length NUM_OAKS_POKEMON_TALK_ADVERBS
 
 .OPT_SweetAdorablyText:
-	text_far _OPT_SweetAdorablyText
-	text_end
+	text_start
+	line "めにいれても　いたくないほど"
+	done
 
 .OPT_WigglySlicklyText:
-	text_far _OPT_WigglySlicklyText
-	text_end
+	text_start
+	line "ニョロニョロしてて"
+	done
 
 .OPT_AptlyNamedText:
-	text_far _OPT_AptlyNamedText
-	text_end
+	text_start
+	line "なまえのとおり"
+	done
 
 .OPT_UndeniablyKindOfText:
-	text_far _OPT_UndeniablyKindOfText
-	text_end
+	text_start
+	line "ほんと　いわれてみれば"
+	done
 
 .OPT_UnbearablyText:
-	text_far _OPT_UnbearablyText
-	text_end
+	text_start
+	line "もう　たえられないくらい"
+	done
 
 .OPT_WowImpressivelyText:
-	text_far _OPT_WowImpressivelyText
-	text_end
+	text_start
+	line "これ<GA>なかなかどーして"
+	done
 
 .OPT_AlmostPoisonouslyText:
-	text_far _OPT_AlmostPoisonouslyText
-	text_end
+	text_start
+	line "どくどくしくって"
+	done
 
 .OPT_SensuallyText:
-	text_far _OPT_SensuallyText
-	text_end
+	text_start
+	line "エッチぽくって"
+	done
 
 .OPT_MischievouslyText:
-	text_far _OPT_MischievouslyText
-	text_end
+	text_start
+	line "オニのように"
+	done
 
 .OPT_TopicallyText:
-	text_far _OPT_TopicallyText
-	text_end
+	text_start
+	line "きんじょでも　ひょうばんなくらい"
+	done
 
 .OPT_AddictivelyText:
-	text_far _OPT_AddictivelyText
-	text_end
+	text_start
+	line "やみつきに　なるくらい"
+	done
 
 .OPT_LooksInWaterText:
-	text_far _OPT_LooksInWaterText
-	text_end
+	text_start
+	line "かわ<NO>ほとりで"
+	done
 
 .OPT_EvolutionMustBeText:
-	text_far _OPT_EvolutionMustBeText
-	text_end
+	text_start
+	line "しんかしたりなんかすると"
+	done
 
 .OPT_ProvocativelyText:
-	text_far _OPT_ProvocativelyText
-	text_end
+	text_start
+	line "いろんな　いみで"
+	done
 
 .OPT_FlippedOutText:
-	text_far _OPT_FlippedOutText
-	text_end
+	text_start
+	line "ひっくりかえすと"
+	done
 
 .OPT_HeartMeltinglyText:
-	text_far _OPT_HeartMeltinglyText
-	text_end
+	text_start
+	line "まもって　あげたくなるくらい"
+	done
 
 OaksPKMNTalk9:
 	; 0-15 are all valid indexes into .Adjectives,
@@ -456,68 +482,84 @@ OaksPKMNTalk9:
 	assert_table_length NUM_OAKS_POKEMON_TALK_ADJECTIVES
 
 .OPT_CuteText:
-	text_far _OPT_CuteText
-	text_end
+	text_start
+	line "かわいいよね"
+	done
 
 .OPT_WeirdText:
-	text_far _OPT_WeirdText
-	text_end
+	text_start
+	line "へんなのー"
+	done
 
 .OPT_PleasantText:
-	text_far _OPT_PleasantText
-	text_end
+	text_start
+	line "きもちいいね"
+	done
 
 .OPT_BoldSortOfText:
-	text_far _OPT_BoldSortOfText
-	text_end
+	text_start
+	line "ちょっと　ダイタンってかんじ"
+	done
 
 .OPT_FrighteningText:
-	text_far _OPT_FrighteningText
-	text_end
+	text_start
+	line "こわくなーい？"
+	done
 
 .OPT_SuaveDebonairText:
-	text_far _OPT_SuaveDebonairText
-	text_end
+	text_start
+	line "すいすいしてるよね！"
+	done
 
 .OPT_PowerfulText:
-	text_far _OPT_PowerfulText
-	text_end
+	text_start
+	line "つよいよねー"
+	done
 
 .OPT_ExcitingText:
-	text_far _OPT_ExcitingText
-	text_end
+	text_start
+	line "はくりょく　あるよね"
+	done
 
 .OPT_NowText:
-	text_far _OPT_NowText
-	text_end
+	text_start
+	line "ナウいよねー"
+	done
 
 .OPT_InspiringText:
-	text_far _OPT_InspiringText
-	text_end
+	text_start
+	line "あこがれちゃうー！"
+	done
 
 .OPT_FriendlyText:
-	text_far _OPT_FriendlyText
-	text_end
+	text_start
+	line "なかまにして　みたいかも"
+	done
 
 .OPT_HotHotHotText:
-	text_far _OPT_HotHotHotText
-	text_end
+	text_start
+	line "あつく　なっちゃう！"
+	done
 
 .OPT_StimulatingText:
-	text_far _OPT_StimulatingText
-	text_end
+	text_start
+	line "しびれるー！"
+	done
 
 .OPT_GuardedText:
-	text_far _OPT_GuardedText
-	text_end
+	text_start
+	line "だいじに　したいね！"
+	done
 
 .OPT_LovelyText:
-	text_far _OPT_LovelyText
-	text_end
+	text_start
+	line "メロメロって　かんじー！"
+	done
 
 .OPT_SpeedyText:
-	text_far _OPT_SpeedyText
-	text_end
+	text_start
+	line "うごき<GA>すばやいよねー"
+	done
 
 OaksPKMNTalk10:
 	farcall RadioMusicRestartPokemonChannel
@@ -533,8 +575,8 @@ OaksPKMNTalk10:
 	ret
 
 OPT_PokemonChannelText:
-	text_far _OPT_PokemonChannelText
-	text_end
+	text "#"
+	done
 
 OPT_RestartText:
 	text_end
@@ -543,13 +585,13 @@ OaksPKMNTalk11:
 	ld hl, wRadioTextDelay
 	dec [hl]
 	ret nz
-	hlcoord 9, 14
+	hlcoord 6, 14
 	ld de, .pokemon_string
 	ld a, OAKS_POKEMON_TALK_12
 	jp PlaceRadioString
 
 .pokemon_string
-	db "#MON@"
+	db "#@"
 
 OaksPKMNTalk12:
 	ld hl, wRadioTextDelay
@@ -561,7 +603,7 @@ OaksPKMNTalk12:
 	jp PlaceRadioString
 
 .pokemon_channel_string
-	db "#MON Channel@"
+	db "#　チャンネル@"
 
 OaksPKMNTalk13:
 	ld hl, wRadioTextDelay
@@ -611,11 +653,11 @@ CopyBottomLineToTopLine:
 ClearBottomLine:
 	hlcoord 1, 15
 	ld bc, SCREEN_WIDTH - 2
-	ld a, ' '
+	ld a, '　'
 	call ByteFill
 	hlcoord 1, 16
 	ld bc, SCREEN_WIDTH - 2
-	ld a, ' '
+	ld a, '　'
 	jp ByteFill
 
 PokedexShow1:
@@ -641,91 +683,23 @@ PokedexShow1:
 
 PokedexShow2:
 	ld a, [wCurPartySpecies]
+	cp KINGLER + 1
+	ld hl, PokedexDataPointerTable1
+	jr c, .gotTable
+	sub KINGLER
+	ld hl, PokedexDataPointerTable2
+.gotTable
 	dec a
-	ld hl, PokedexDataPointerTable
 	ld c, a
 	ld b, 0
 	add hl, bc
 	add hl, bc
-	rlca
-	rlca
-	maskbits NUM_DEX_ENTRY_BANKS
-	add BANK("Pokedex Entries 001-064")
-	push af
-	ld a, BANK(PokedexDataPointerTable)
+	ld a, BANK("Pokedex Entries")
 	call GetFarWord
-	pop af
-	push af
 	push hl
-	call CopyDexEntryPart1
-	dec hl
-	ld [hl], '<DONE>'
-	ld hl, wPokedexShowPointerAddr
-	call CopyRadioTextToRAM
-	pop hl
-	pop af
-	call CopyDexEntryPart2
-rept 4
-	inc hl
-endr
-	ld a, l
-	ld [wPokedexShowPointerAddr], a
-	ld a, h
-	ld [wPokedexShowPointerAddr + 1], a
-	ld a, POKEDEX_SHOW_3
-	jp PrintRadioLine
-
-PokedexShow3:
-	call CopyDexEntry
-	ld a, POKEDEX_SHOW_4
-	jp PrintRadioLine
-
-PokedexShow4:
-	call CopyDexEntry
-	ld a, POKEDEX_SHOW_5
-	jp PrintRadioLine
-
-PokedexShow5:
-	call CopyDexEntry
-	ld a, POKEDEX_SHOW_6
-	jp PrintRadioLine
-
-PokedexShow6:
-	call CopyDexEntry
-	ld a, POKEDEX_SHOW_7
-	jp PrintRadioLine
-
-PokedexShow7:
-	call CopyDexEntry
-	ld a, POKEDEX_SHOW_8
-	jp PrintRadioLine
-
-PokedexShow8:
-	call CopyDexEntry
-	ld a, POKEDEX_SHOW
-	jp PrintRadioLine
-
-CopyDexEntry:
-	ld a, [wPokedexShowPointerAddr]
-	ld l, a
-	ld a, [wPokedexShowPointerAddr + 1]
-	ld h, a
-	ld a, [wPokedexShowPointerBank]
-	push af
-	push hl
-	call CopyDexEntryPart1
-	dec hl
-	ld [hl], '<DONE>'
-	ld hl, wPokedexShowPointerAddr
-	call CopyRadioTextToRAM
-	pop hl
-	pop af
-	call CopyDexEntryPart2
-	ret
-
-CopyDexEntryPart1:
 	ld de, wPokedexShowPointerBank
 	ld bc, SCREEN_WIDTH - 1
+	ld a, BANK("Pokedex Entries")
 	call FarCopyBytes
 	ld hl, wPokedexShowPointerAddr
 	ld [hl], TX_START
@@ -735,36 +709,138 @@ CopyDexEntryPart1:
 .loop
 	ld a, [hli]
 	cp '@'
-	ret z
-	cp '<NEXT>'
-	ret z
-	cp '<DEXEND>'
-	ret z
-	jr .loop
-
-CopyDexEntryPart2:
-	ld d, a
-.loop
-	ld a, d
+	jr nz, .loop
+	dec hl
+	ld [hl], '#'
+	inc hl
+	ld [hl], '<DONE>'
+	ld hl, wPokedexShowPointerAddr
+	call CopyRadioTextToRAM
+	pop hl
+.loop2
+	ld a, BANK("Pokedex Entries")
 	call GetFarByte
 	inc hl
 	cp '@'
-	jr z, .okay
-	cp '<NEXT>'
-	jr z, .okay
-	cp '<DEXEND>'
-	jr nz, .loop
-.okay
+	jr nz, .loop2
+	ld de, wPokedexShowPointerAddr
 	ld a, l
-	ld [wPokedexShowPointerAddr], a
+	ld [de], a
+	inc de
 	ld a, h
-	ld [wPokedexShowPointerAddr + 1], a
-	ld a, d
-	ld [wPokedexShowPointerBank], a
-	ret
+	ld [de], a
+	ld a, POKEDEX_SHOW_3
+	jp PrintRadioLine
+
+PokedexShow3:
+	ld hl, wPokedexShowPointerAddr
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	inc hl
+	inc hl	
+	inc hl
+	push hl
+	ld de, wPokedexShowPointerBank
+	ld bc, SCREEN_WIDTH - 1
+	ld a, BANK("Pokedex Entries")
+	call FarCopyBytes
+	ld hl, wPokedexShowPointerAddr
+	ld [hl], TX_START
+	inc hl
+	ld [hl], '<LINE>'
+	inc hl
+.loop
+	ld a, [hli]
+	cp '<NEXT>'
+	jr nz, .loop
+	dec hl
+	ld [hl], '<DONE>'
+	ld hl, wPokedexShowPointerAddr
+	call CopyRadioTextToRAM
+	pop hl
+	ld de, wPokedexShowPointerAddr
+	ld a, l
+	ld [de], a
+	inc de
+	ld a, h
+	ld [de], a
+	ld a, POKEDEX_SHOW_4
+	jp PrintRadioLine
+
+PokedexShow4:
+	ld hl, wPokedexShowPointerAddr
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+.loop
+	ld a, BANK("Pokedex Entries")
+	call GetFarByte
+	inc hl
+	cp '<NEXT>'
+	jr nz, .loop
+	push hl
+	ld de, wPokedexShowPointerBank
+	ld bc, SCREEN_WIDTH - 1
+	ld a, BANK("Pokedex Entries")
+	call FarCopyBytes
+	ld hl, wPokedexShowPointerAddr
+	ld [hl], TX_START
+	inc hl
+	ld [hl], '<LINE>'
+	inc hl
+.loop2
+	ld a, [hli]
+	cp '<NEXT>'
+	jr nz, .loop2
+	dec hl
+	ld [hl], '<DONE>'
+	ld hl, wPokedexShowPointerAddr
+	call CopyRadioTextToRAM
+	pop hl
+	ld de, wPokedexShowPointerAddr
+	ld a, l
+	ld [de], a
+	inc de
+	ld a, h
+	ld [de], a
+	ld a, POKEDEX_SHOW_5
+	jp PrintRadioLine
+
+PokedexShow5:
+	ld hl, wPokedexShowPointerAddr
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+.loop
+	ld a, BANK("Pokedex Entries")
+	call GetFarByte
+	inc hl
+	cp '<NEXT>'
+	jr nz, .loop
+	ld de, wPokedexShowPointerBank
+	ld bc, SCREEN_WIDTH - 1
+	ld a, BANK("Pokedex Entries")
+	call FarCopyBytes
+	ld hl, wPokedexShowPointerAddr
+	ld [hl], TX_START
+	inc hl
+	ld [hl], '<LINE>'
+	inc hl
+.loop2
+	ld a, [hli]
+	cp '<DEXEND>'
+	jr nz, .loop2
+	dec hl
+	ld [hl], '<DONE>'
+	ld hl, wPokedexShowPointerAddr
+	ld a, POKEDEX_SHOW
+	jp NextRadioLine
 
 PokedexShowText:
-	text_far _PokedexShowText
+	text_start
+	line "@"
+	text_ram wStringBuffer1
 	text_end
 
 BenMonMusic1:
@@ -835,44 +911,56 @@ StartPokemonMusicChannel:
 	ret
 
 BenIntroText1:
-	text_far _BenIntroText1
-	text_end
+	text_start
+	line "セージ『#　ミュージック"
+	done
 
 BenIntroText2:
-	text_far _BenIntroText2
-	text_end
+	text_start
+	line "チャンネル！"
+	done
 
 BenIntroText3:
-	text_far _BenIntroText3
-	text_end
+	text_start
+	line "ディージェイ<WA>セージで　ごじゃる"
+	done
 
 FernIntroText1:
-	text_far _FernIntroText1
-	text_end
+	text_start
+	line "コージ『#　うた<NO>ひろば！"
+	done
 
 FernIntroText2:
-	text_far _FernIntroText2
-	text_end
+	text_start
+	line "ディージェイ<WA>コージ　なのだー"
+	done
 
 BenFernText1:
-	text_far _BenFernText1
-	text_end
+	text_start
+	line "きょう<WA>@"
+	text_today
+	text "　ということで"
+	done
 
 BenFernText2A:
-	text_far _BenFernText2A
-	text_end
+	text_start
+	line "#たちも　げんきに　なる"
+	done
 
 BenFernText2B:
-	text_far _BenFernText2B
-	text_end
+	text_start
+	line "#たちも　すやすや　ねむる"
+	done
 
 BenFernText3A:
-	text_far _BenFernText3A
-	text_end
+	text_start
+	line "#マーチ！"
+	done
 
 BenFernText3B:
-	text_far _BenFernText3B
-	text_end
+	text_start
+	line "#こもりうた！"
+	done
 
 LuckyNumberShow1:
 	call StartRadioStation
@@ -966,56 +1054,75 @@ LuckyNumberShow15:
 	jp NextRadioLine
 
 LC_Text1:
-	text_far _LC_Text1
-	text_end
+	text_start
+	line "ツゲ『ヤー！　ラジオ<WO>きいてる"
+	done
 
 LC_Text2:
-	text_far _LC_Text2
-	text_end
+	text_start
+	line "みんな　さいきん　ちょうし　どうよ？"
+	done
 
 LC_Text3:
-	text_far _LC_Text3
-	text_end
+	text_start
+	line "グッドな　きみも　ダメダメな　きみも"
+	done
 
 LC_Text4:
-	text_far _LC_Text4
-	text_end
+	text_start
+	line "こんしゅう<NO>ラッキーナンバー"
+	done
 
 LC_Text5:
-	text_far _LC_Text5
-	text_end
+	text_start
+	line "いってみようよ！"
+	done
 
 LC_Text6:
-	text_far _LC_Text6
-	text_end
+	text_start
+	line "じゃあ　はっぴょう　するよ"
+	done
 
 LC_Text7:
-	text_far _LC_Text7
-	text_end
+	text_start
+	line "こんしゅう<NO>ラッキーナンバーは"
+	done
 
 LC_Text8:
-	text_far _LC_Text8
-	text_end
+	text_start
+	line "@"
+	text_pause
+	text_dots 3
+	text_ram wStringBuffer1
+	text "！"
+	done
 
 LC_Text9:
-	text_far _LC_Text9
-	text_end
+	text_start
+	line "もいちど　いくよ"
+	done
 
 LC_Text10:
-	text_far _LC_Text10
-	text_end
+	text_start
+	line "こ<NO>すうじに　ぴんと　きたら"
+	done
 
 LC_Text11:
-	text_far _LC_Text11
-	text_end
+	text_start
+	line "いますぐ　ラジオとうに　カモン！"
+	done
 
 LC_DragText1:
-	text_far _LC_DragText1
-	text_end
+	text_start
+	line "@"
+	text_dots 3
+	text "おなじこと　ばかり　いってると"
+	done
 
 LC_DragText2:
-	text_far _LC_DragText2
-	text_end
+	text_start
+	line "つかれちゃうなー　もう"
+	done
 
 PeoplePlaces1:
 	call StartRadioStation
@@ -1039,16 +1146,19 @@ PeoplePlaces3:
 	jp NextRadioLine
 
 PnP_Text1:
-	text_far _PnP_Text1
-	text_end
+	text_start
+	line "あのまち　このひと！"
+	done
 
 PnP_Text2:
-	text_far _PnP_Text2
-	text_end
+	text_start
+	line "このばんぐみ<WA>わたし　リリスが"
+	done
 
 PnP_Text3:
-	text_far _PnP_Text3
-	text_end
+	text_start
+	line "おおくり　いたしまーす！"
+	done
 
 PeoplePlaces4: ; People
 	call Random
@@ -1088,8 +1198,13 @@ PeoplePlaces4: ; People
 INCLUDE "data/radio/pnp_hidden_people.asm"
 
 PnP_Text4:
-	text_far _PnP_Text4
-	text_end
+	text_start
+	line "@"
+	text_ram wStringBuffer2
+	text "<NO>@"
+	text_ram wStringBuffer1
+	text "って"
+	done
 
 PeoplePlaces5:
 	; 0-15 are all valid indexes into .Adjectives,
@@ -1138,68 +1253,84 @@ PeoplePlaces5:
 	assert_table_length NUM_PNP_PEOPLE_ADJECTIVES
 
 PnP_CuteText:
-	text_far _PnP_CuteText
-	text_end
+	text_start
+	line "かわいいね"
+	done
 
 PnP_LazyText:
-	text_far _PnP_LazyText
-	text_end
+	text_start
+	line "なまけものかも"
+	done
 
 PnP_HappyText:
-	text_far _PnP_HappyText
-	text_end
+	text_start
+	line "いつも　ごきげん"
+	done
 
 PnP_NoisyText:
-	text_far _PnP_NoisyText
-	text_end
+	text_start
+	line "とっても　にぎやか"
+	done
 
 PnP_PrecociousText:
-	text_far _PnP_PrecociousText
-	text_end
+	text_start
+	line "ちょっと　おませさん"
+	done
 
 PnP_BoldText:
-	text_far _PnP_BoldText
-	text_end
+	text_start
+	line "ちょっと　ダイタン"
+	done
 
 PnP_PickyText:
-	text_far _PnP_PickyText
-	text_end
+	text_start
+	line "くちうるさいのよねー！"
+	done
 
 PnP_SortOfOKText:
-	text_far _PnP_SortOfOKText
-	text_end
+	text_start
+	line "それなりに⋯ね"
+	done
 
 PnP_SoSoText:
-	text_far _PnP_SoSoText
-	text_end
+	text_start
+	line "わたしてきに<WA>まあまあかしら？"
+	done
 
 PnP_GreatText:
-	text_far _PnP_GreatText
-	text_end
+	text_start
+	line "ほんと<WA>すごいのかも"
+	done
 
 PnP_MyTypeText:
-	text_far _PnP_MyTypeText
-	text_end
+	text_start
+	line "わたしてきに<WA>タイプかも！"
+	done
 
 PnP_CoolText:
-	text_far _PnP_CoolText
-	text_end
+	text_start
+	line "イカしてると　おもわない？"
+	done
 
 PnP_InspiringText:
-	text_far _PnP_InspiringText
-	text_end
+	text_start
+	line "わたし　あこがれちゃう！"
+	done
 
 PnP_WeirdText:
-	text_far _PnP_WeirdText
-	text_end
+	text_start
+	line "かんがえてみると　ふしぎー"
+	done
 
 PnP_RightForMeText:
-	text_far _PnP_RightForMeText
-	text_end
+	text_start
+	line "わたしのこと　どうおもってるのかな？"
+	done
 
 PnP_OddText:
-	text_far _PnP_OddText
-	text_end
+	text_start
+	line "やっぱり　へん！"
+	done
 
 PeoplePlaces6: ; Places
 	call Random
@@ -1223,8 +1354,11 @@ PeoplePlaces6: ; Places
 INCLUDE "data/radio/pnp_places.asm"
 
 PnP_Text5:
-	text_far _PnP_Text5
-	text_end
+	text_start
+	line "@"
+	text_ram wStringBuffer1
+	text "って"
+	done
 
 PeoplePlaces7:
 	; 0-15 are all valid indexes into .Adjectives,
@@ -1325,44 +1459,72 @@ RocketRadio10:
 	jp NextRadioLine
 
 RocketRadioText1:
-	text_far _RocketRadioText1
-	text_end
+	text_start
+	line "<⋯>@"
+	text_pause
+	text "あー@"
+	text_pause
+	text "<⋯>@"
+	text_pause
+	text "われわれは"
+	done
 
 RocketRadioText2:
-	text_far _RocketRadioText2
-	text_end
+	text_start
+	line "なく　こ　も　だまる　<ROCKET>！"
+	done
 
 RocketRadioText3:
-	text_far _RocketRadioText3
-	text_end
+	text_start
+	line "そしき<NO>たてなおし<WO>すすめた"
+	done
 
 RocketRadioText4:
-	text_far _RocketRadioText4
-	text_end
+	text_start
+	line "３ねんかん<NO>どりょく<GA>みのり"
+	done
 
 RocketRadioText5:
-	text_far _RocketRadioText5
-	text_end
+	text_start
+	line "いま　ここに　<ROCKET>の"
+	done
 
 RocketRadioText6:
-	text_far _RocketRadioText6
-	text_end
+	text_start
+	line "ふっかつ<WO>せんげん　する！"
+	done
 
 RocketRadioText7:
-	text_far _RocketRadioText7
-	text_end
+	text_start
+	line "サカキさーん！　@"
+	text_pause
+	text "<⋯>　@"
+	text_pause
+	text "きこえますー？"
+	done
 
 RocketRadioText8:
-	text_far _RocketRadioText8
-	text_end
+	text_start
+	line "<⋯>　@"
+	text_pause
+	text "ついに　やりましたよー！"
+	done
 
 RocketRadioText9:
-	text_far _RocketRadioText9
-	text_end
+	text_start
+	line "ボス<WA>どこに　いるんだろう@"
+	text_pause
+	text "<⋯>？"
+	done
 
 RocketRadioText10:
-	text_far _RocketRadioText10
-	text_end
+	text_start
+	line "ラジオ<WO>きいてるかなあ@"
+	text_pause
+	text "<⋯>　@"
+	text_pause
+	text "<⋯>"
+	done
 
 PokeFluteRadio:
 	call StartRadioStation
@@ -1383,9 +1545,6 @@ EvolutionRadio:
 	ret
 
 CopyRadioTextToRAM:
-	ld a, [hl]
-	cp TX_FAR
-	jp z, FarCopyRadioText
 	ld de, wRadioText
 	ld bc, 2 * SCREEN_WIDTH
 	jp CopyBytes

@@ -26,7 +26,6 @@ ReadAnyMail:
 	call ClearSprites
 	call ClearTilemap
 	call DisableLCD
-	call LoadFontsExtra
 	pop de
 	call .LoadGFX
 	call EnableLCD
@@ -379,8 +378,7 @@ LoadMorphMailGFX:
 	ld [hl], a
 	inc a
 	hlcoord 2, 15
-	ld b, $e
-	call Mail_DrawRowLoop
+	call Mail_Draw13TileRow
 	inc a
 	hlcoord 2, 11
 	call Mail_Draw16TileRow
@@ -555,10 +553,9 @@ LoadPortraitMailGFX:
 	call LoadMailGFX_Color2
 
 	call DrawMailBorder2
-	hlcoord 8, 15
+	hlcoord 9, 15
 	ld a, $36
-	ld b, $a
-	call Mail_DrawRowLoop
+	call Mail_Draw7TileRow
 	call LovelyEonMail_PlaceIcons
 	ld a, $1
 	ld [wUnownLetter], a
@@ -702,16 +699,7 @@ MailGFX_PlaceMessage:
 	ld a, [de]
 	and a
 	ret z
-	ld a, [wCurMailIndex]
-	hlcoord 8, 14
-	cp PORTRAITMAIL_INDEX
-	jr z, .place_author
-	hlcoord 6, 14
-	cp MORPH_MAIL_INDEX
-	jr z, .place_author
-	hlcoord 5, 14
-
-.place_author
+	hlcoord 10, 14
 	jp PlaceString
 
 InvertBytes: ; unreferenced
@@ -818,7 +806,7 @@ Mail_PlaceAlternatingColumn:
 	pop af
 	ret
 
-Mail_Draw7TileRow: ; unreferenced
+Mail_Draw7TileRow:
 	ld b, 7
 	jr Mail_DrawRowLoop
 

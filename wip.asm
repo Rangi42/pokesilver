@@ -60,34 +60,10 @@ SECTION "rom37", ROMX[$4000], BANK[37]
 	dr Map_data_end, $65f9
 
 
-SECTION "rom46", ROMX[$6300], BANK[46]
-; ROM $2e : $B8000 - $BBFFF
-
-	dr CheckForHiddenItems, $6300
-	dr TreeMonEncounter, $6378
-	dr RockMonEncounter, $63a1
-	dr PlayRadioShow, $65bd
-	dr ReadPartyMonMail, $7258
-	dr ReadAnyMail, $7266
-	dr ItemIsMail, $7e63
-
-	dr
-
 SECTION "rom47", ROMX[$4000], BANK[47]
 ; ROM $2f : $BC000 - $BFFFF
 
 	dr WateredWeirdTreeScript, $5f18
-
-	dr
-
-SECTION "rom49", ROMX[$7a40], BANK[49]
-; ROM $31 : $C4000 - $C7FFF
-
-	dr _CheckPokerus, $7a40
-	dr CheckForLuckyNumberWinners, $7a5a
-	dr PrintTodaysLuckyNumber, $7c03
-	dr CheckPartyFullAfterContest, $7c15
-	dr GiveANickname_YesNo, $7d26
 
 	dr
 
