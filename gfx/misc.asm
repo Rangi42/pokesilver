@@ -23,10 +23,10 @@ INCBIN "gfx/pokemon/egg/egg.2bpp.lz"
 ;INCBIN "gfx/title/logo.tilemap"
 
 
-;SECTION "The End", ROMX
+SECTION "The End", ROMX
 
-;TheEndGFX::
-;INCBIN "gfx/credits/theend.2bpp"
+TheEndGFX::
+INCBIN "gfx/credits/theend.2bpp"
 
 
 ;SECTION "Font Inversed", ROMX

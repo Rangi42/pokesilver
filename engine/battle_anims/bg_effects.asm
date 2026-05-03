@@ -153,7 +153,6 @@ BatttleBGEffects_GetNamedJumptablePointer:
 
 BattleBGEffects_AnonJumptable:
 	pop de
-DummyPredef2F::
 	ld hl, BG_EFFECT_STRUCT_JT_INDEX
 	add hl, bc
 	ld l, [hl]
@@ -1147,9 +1146,6 @@ BattleBGEffect_DoubleTeam:
 	call BattleBGEffects_ClearLYOverrides
 	ld a, LOW(rSCX)
 	call BattleBGEffect_SetLCDStatCustoms1
-	ldh a, [hLYOverrideEnd]
-	inc a
-	ldh [hLYOverrideEnd], a
 	ld hl, BG_EFFECT_STRUCT_BATTLE_TURN
 	add hl, bc
 	ld [hl], $0
@@ -1209,7 +1205,6 @@ BattleBGEffect_DoubleTeam:
 	ldh a, [hLYOverrideEnd]
 	sub l
 	srl a
-	push af
 .loop
 	ld [hl], e
 	inc hl
@@ -1217,8 +1212,6 @@ BattleBGEffect_DoubleTeam:
 	inc hl
 	dec a
 	jr nz, .loop
-	pop af
-	ret nc
 	ld [hl], e
 	ret
 
@@ -1243,12 +1236,6 @@ BattleBGEffect_AcidArmor:
 	ld e, [hl]
 	ld d, 2
 	call DeformScreen
-	ld h, HIGH(wLYOverridesBackup)
-	ldh a, [hLYOverrideEnd]
-	ld l, a
-	ld [hl], $0
-	dec l
-	ld [hl], $0
 	ret
 
 .one
@@ -1266,22 +1253,6 @@ BattleBGEffect_AcidArmor:
 	cp l
 	jr nz, .loop
 	ld [hl], $90
-	ldh a, [hLYOverrideEnd]
-	ld l, a
-	ld a, [hl]
-	cp $1
-	jr c, .okay
-	cp $90
-	jr z, .okay
-	ld [hl], $0
-.okay
-	dec l
-	ld a, [hl]
-	cp $2
-	ret c
-	cp $90
-	ret z
-	ld [hl], $0
 	ret
 
 .two
@@ -1453,7 +1424,7 @@ Tackle_MoveForward:
 .reached_limit
 	call BattleBGEffects_IncAnonJumptableIndex
 .finish
-	call Rollout_FillLYOverridesBackup
+	call BGEffect_FillLYOverridesBackup
 	ld hl, BG_EFFECT_STRUCT_BATTLE_TURN
 	add hl, bc
 	ld a, [hl]
@@ -1474,7 +1445,7 @@ Tackle_ReturnMove:
 	jr nz, .move_back
 	call BattleBGEffects_IncAnonJumptableIndex
 .move_back
-	call Rollout_FillLYOverridesBackup
+	call BGEffect_FillLYOverridesBackup
 	ld hl, BG_EFFECT_STRUCT_BATTLE_TURN
 	add hl, bc
 	ld a, [hl]
@@ -1484,58 +1455,6 @@ Tackle_ReturnMove:
 	add hl, bc
 	add [hl]
 	ld [hl], a
-	ret
-
-Rollout_FillLYOverridesBackup:
-	push af
-	ld a, [wFXAnimID + 1]
-	or a
-	jr nz, .not_rollout
-	ld a, [wFXAnimID]
-	cp ROLLOUT
-	jr z, .rollout
-.not_rollout
-	pop af
-	jp BGEffect_FillLYOverridesBackup
-
-.rollout
-	ldh a, [hLYOverrideStart]
-	ld d, a
-	ldh a, [hLYOverrideEnd]
-	sub d
-	ld d, a
-	ld h, HIGH(wLYOverridesBackup)
-	ldh a, [hSCY]
-	or a
-	jr nz, .skip1
-	ldh a, [hLYOverrideStart]
-	or a
-	jr z, .skip2
-	dec a
-	ld l, a
-	ld [hl], $0
-	jr .skip2
-
-.skip1
-	ldh a, [hLYOverrideEnd]
-	dec a
-	ld l, a
-	ld [hl], $0
-.skip2
-	ldh a, [hSCY]
-	ld l, a
-	ldh a, [hLYOverrideStart]
-	sub l
-	jr nc, .skip3
-	xor a
-	dec d
-.skip3
-	ld l, a
-	pop af
-.loop
-	ld [hli], a
-	dec d
-	jr nz, .loop
 	ret
 
 BattleBGEffect_BetaPursuit: ; unused
@@ -2251,9 +2170,6 @@ BattleBGEffect_Rollout:
 .xor_a
 	xor a
 .okay
-	push af
-	call DelayFrame
-	pop af
 	ldh [hSCY], a
 	xor $ff
 	inc a
@@ -2584,7 +2500,7 @@ BattleBGEffects_ClearLYOverrides:
 	xor a
 BattleBGEffects_SetLYOverrides:
 	ld hl, wLYOverrides
-	ld e, $99
+	ld e, $91
 .loop1
 	ld [hli], a
 	dec e
@@ -2820,6 +2736,7 @@ BGEffect_DisplaceLYOverridesBackup:
 	jr nz, .loop
 	pop af
 	xor $ff
+	inc a
 .loop2
 	ld [hli], a
 	dec d

@@ -158,8 +158,8 @@ ROMX $31
 	org $7a40
 	"bank31"
 ROMX $32
-	; "bank32"
-	; "The End"
+	"bank32"
+	"The End"
 ROMX $33
 	; "Move Animations"
 	; "Extra Songs 2"
