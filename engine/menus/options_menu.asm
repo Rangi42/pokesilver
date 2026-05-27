@@ -84,7 +84,7 @@ StringOptions:
 	next "ウインドウ@"
 
 StringOptions2:
-	db "タイプ"
+	db   "タイプ"
 	next "おわり@"
 
 GetOptionPointer:

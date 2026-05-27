@@ -15,8 +15,6 @@
 	const DEXSTATE_UPDATE_UNOWN_MODE
 	const DEXSTATE_EXIT
 
-EXPORT DEF POKEDEX_SCX EQU 5
-
 Pokedex:
 	ld hl, wOptions
 	ld a, [hl]

@@ -132,7 +132,9 @@ _InitSpriteAnimStruct::
 	ret
 
 .found
+IF DEF(_REV0)
 	pop af
+ENDC
 
 ; Back up the structure address to bc.
 	ld c, l
@@ -141,6 +143,17 @@ _InitSpriteAnimStruct::
 ; Increment [wSpriteAnimCount].
 	ld hl, wSpriteAnimCount
 	inc [hl]
+
+IF DEF(_REV1)
+; skip a zero value
+	ld a, [hl]
+	and a
+	jr nz, .nonzero
+	inc [hl]
+
+.nonzero
+	pop af
+ENDC
 
 ; Get row a of SpriteAnimObjects, copy the pointer into de
 	ld e, a
