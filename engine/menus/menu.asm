@@ -523,7 +523,62 @@ _PushWindow::
 	ret
 
 .ret
+IF DEF(_DEBUG)
+	push bc
+	push de
+	push hl
+	xor a
+	ld l, c
+	ld h, 0
+	ld c, b
+	ld b, 0
+	ld a, $14
+	call AddNTimes
+	ld a, h
+	cpl
+	ld h, a
+	ld a, l
+	cpl
+	ld l, a
+	ld a, 1
+	add l
+	ld l, a
+	ld a, 0
+	adc h
+	ld h, a
+	ld a, e
+	add l
+	ld l, a
+	ld a, d
+	adc h
+	ld h, a
+	ld a, e
+	sub 0
+	ld a, d
+	sbc $b8
+	jr c, .asm_24335
+	pop hl
+	pop de
+	pop bc
 	ret
+
+.asm_24335
+	ld hl, .Text
+	call PrintText
+	call WaitBGMap
+
+.infinite_loop
+	nop
+	jr .infinite_loop
+
+.Text:
+	text "ウィンドウセーブエリアが"
+	next "オーバーしました"
+	done
+
+ELSE
+	ret
+ENDC
 
 _ExitMenu::
 	xor a

@@ -25,9 +25,17 @@ GivePokerusAndConvertBerries:
 	ldh a, [hRandomAdd]
 	and a
 	ret nz
+IF DEF(_DEBUG)
+	ld a, [wDebugFlags]
+	bit DEBUG_FIELD_F, a
+	jr nz, .asm_2fbc9
+ENDC
 	ldh a, [hRandomSub]
 	cp 3
 	ret nc ; 3/65536 chance (00 00, 00 01 or 00 02)
+IF DEF(_DEBUG)
+.asm_2fbc9
+ENDC
 	ld a, [wPartyCount]
 	ld b, a
 .randomMonSelectLoop

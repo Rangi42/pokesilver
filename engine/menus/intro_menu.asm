@@ -13,6 +13,38 @@ NewGame:
 	ldh [hMapEntryMethod], a
 	jp FinishContinueFunction
 
+IF DEF(_DEBUG)
+Function5c3e:
+	ld hl, wDebugFlags
+	set DEBUG_FIELD_F, [hl]
+	call ResetWRAM
+	farcall Functionfc3a6
+	call ClearTilemapEtc
+	call InitializeWorld
+
+	ld a, SPAWN_HOME
+	ld [wDefaultSpawnpoint], a
+
+	ld a, MAPSETUP_WARP
+	ldh [hMapEntryMethod], a
+	jp FinishContinueFunction
+
+Function5c5e:
+	ld hl, wDebugFlags
+	set DEBUG_FIELD_F, [hl]
+	call ResetWRAM
+	farcall Functionfc3a6
+	call ClearTilemapEtc
+	call InitializeWorld
+
+	ld a, SPAWN_DEBUG
+	ld [wDefaultSpawnpoint], a
+
+	ld a, MAPSETUP_WARP
+	ldh [hMapEntryMethod], a
+	jp FinishContinueFunction
+ENDC
+
 ResetWRAM:
 	xor a
 	ldh [hBGMapMode], a
@@ -305,6 +337,14 @@ ConfirmContinue:
 	ret
 
 .PressA:
+IF DEF(_DEBUG)
+	ld hl, wDebugFlags
+	res DEBUG_FIELD_F, [hl]
+	ldh a, [hJoyDown]
+	bit B_PAD_SELECT, a
+	ret z
+	set DEBUG_FIELD_F, [hl]
+ENDC
 	ret
 
 Continue_CheckRTC_RestartClock:
@@ -863,6 +903,9 @@ Intro_PlaceChrisSprite:
 	const TITLESCREENOPTION_MAIN_MENU
 	const TITLESCREENOPTION_DELETE_SAVE_DATA
 	const TITLESCREENOPTION_RESTART
+IF DEF(_DEBUG)
+	const TITLESCREENOPTION_DEBUG
+ENDC
 DEF NUM_TITLESCREENOPTIONS EQU const_value
 
 IntroSequence:
@@ -906,7 +949,11 @@ StartTitleScreen:
 	dw MainMenu
 	dw DeleteSaveData
 	dw IntroSequence
+IF DEF(_DEBUG)
+	dw DebugMenu
+ELSE
 	dw IntroSequence
+ENDC
 
 INCLUDE "engine/movie/title.asm"
 
@@ -1004,6 +1051,11 @@ TitleScreenMain:
 	cp  PAD_UP + PAD_B + PAD_SELECT
 	jr z, .delete_save_data
 
+IF DEF(_DEBUG)
+	ld a, [hl]
+	and PAD_SELECT
+	jr nz, .asm_6677
+ENDC
 ; Press Start or A to start the game.
 	ld a, [hl]
 	and PAD_START | PAD_A
@@ -1013,6 +1065,14 @@ TitleScreenMain:
 .incave
 	ld a, TITLESCREENOPTION_MAIN_MENU
 	jr .done
+
+IF DEF(_DEBUG)
+.asm_6677
+	ld a, TITLESCREENOPTION_DEBUG
+	jr .done
+
+	ret ; unreferenced
+ENDC
 
 .delete_save_data
 	ld a, TITLESCREENOPTION_DELETE_SAVE_DATA

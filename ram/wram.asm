@@ -1244,11 +1244,19 @@ wTileRight:: db
 
 wTilePermissions:: db
 
+UNION
 	ds 33
 
 wcebd:: db
 
 	ds 30
+
+IF DEF(_DEBUG)
+NEXTU
+wDebugToolgearBuffer:: ds TILEMAP_WIDTH * 2
+
+ENDC
+ENDU
 
 wMenuMetadata::
 wWindowStackPointer:: dw
@@ -1530,6 +1538,13 @@ wDebugColorIsTrainer:: db
 wDebugColorIsShiny:: db
 wDebugColorCurTMHM:: db
 
+IF DEF(_DEBUG)
+NEXTU
+wcf21:: db
+	ds 2
+wcf24:: db
+ENDC
+
 NEXTU
 ; Every previous NEXTU takes up 60 or fewer bytes,
 ; except the initial "mon buffer" UNION.
@@ -1687,7 +1702,11 @@ wStringBuffer5:: ds STRING_BUFFER_LENGTH
 
 wBattleMenuCursorPosition:: db
 
+IF DEF(_DEBUG)
+wcfbf:: db
+ELSE
 	ds 1
+ENDC
 
 wCurBattleMon::
 ; index of the player's mon currently in battle (0-5)
@@ -2042,6 +2061,19 @@ NEXTU
 wBuySellItemPrice::
 wTempMysteryGiftTimer::
 wMagikarpLength:: dw
+
+IF DEF(_DEBUG)
+NEXTU
+wd0c5:: db
+wd0c6:: db
+	ds 1
+wd0c8:: db
+wd0c9:: db
+wd0ca:: db
+wd0cb:: db
+wd0cc::
+ENDC
+
 ENDU
 
 wTempEnemyMonSpecies::  db
@@ -2336,7 +2368,12 @@ wVariableSprites:: ds $100 - SPRITE_VARS
 wUnusedReanchorBGMapFlags:: db
 	ds 2
 wTimeOfDayPal:: db
+IF DEF(_DEBUG)
+wd55c:: db
+	ds 3
+ELSE
 	ds 4
+ENDC
 wTimeOfDayPalFlags:: db
 wTimeOfDayPalset:: db
 wCurTimeOfDay:: db
@@ -2515,7 +2552,11 @@ wCurMapSceneScriptsPointer:: dw
 wCurMapCallbackCount:: db
 wCurMapCallbacksPointer:: dw
 
+IF DEF(_DEBUG)
+wd91d:: dw
+ELSE
 	ds 2
+ENDC
 
 ; Sprite id of each decoration
 wDecoBed::           db
@@ -2704,6 +2745,12 @@ wPokedexShowPointerBank:: db
 NEXTU
 wUnusedEggHatchFlag:: db
 
+IF DEF(_DEBUG)
+NEXTU
+	ds 2
+wdcb3:: db
+ENDC
+
 NEXTU
 ; enemy party
 wOTPartyData::
@@ -2746,6 +2793,15 @@ wDudeKeyItems:: ds 18 + 1
 
 wDudeNumBalls:: db
 wDudeBalls:: ds 2 * 4 + 1
+
+IF DEF(_DEBUG)
+NEXTU
+	ds 288
+
+wddee:: dw
+wddf0:: ds NUM_EXP_STATS * 2
+ENDC
+
 ENDU
 
 wPokemonDataEnd::

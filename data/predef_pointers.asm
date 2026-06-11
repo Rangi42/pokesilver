@@ -12,7 +12,7 @@ ENDM
 
 PredefPointers::
 	add_predef LearnMove
-	add_predef DummyPredef1
+	add_predef DebugMenu
 	add_predef HealParty ; this is both a special and a predef
 	add_predef SmallFarFlagAction
 	add_predef ComputeHPBarPixels
@@ -69,7 +69,7 @@ PredefPointers::
 	add_predef PlayBattleAnim
 	add_predef DummyPredef38
 	add_predef DummyPredef39
-	add_predef DummyPredef3A
+	add_predef FightDebugMenu
 	add_predef PartyMonItemName
 	add_predef GetMonFrontpic
 	add_predef GetMonBackpic

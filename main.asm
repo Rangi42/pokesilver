@@ -310,6 +310,9 @@ SECTION "bank3E", ROMX
 
 INCLUDE "engine/gfx/load_font.asm"
 INCLUDE "data/collision/collision_permissions.asm"
+IF DEF(_DEBUG)
+INCLUDE "engine/debug/debug_font.asm"
+ENDC
 
 
 SECTION "bank3E_2", ROMX
@@ -327,7 +330,13 @@ INCLUDE "engine/battle/misc.asm"
 
 SECTION "bank3F", ROMX
 
+IF DEF(_DEBUG)
+INCLUDE "engine/debug/debug_room.asm"
+ELSE
+INCLUDE "engine/debug/debug_dummy.asm"
+ENDC
 INCLUDE "engine/tilesets/tileset_anims.asm"
+INCLUDE "engine/debug/debug_toolgear.asm"
 INCLUDE "engine/events/npc_trade.asm"
 INCLUDE "engine/events/mom_phone.asm"
 INCLUDE "engine/link/mystery_gift_3.asm"

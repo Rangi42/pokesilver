@@ -1,13 +1,3 @@
-DummyPredef3A_DummyData: ; unreferenced
-	db 0
-
-DummyPredef3A:
-	ret
-
-DummyPredef3A_DummyFunction: ; unreferenced
-	ret
-
-
 _AnimateTileset::
 ; Increment [hTileAnimFrame] and run that frame's function
 ; from the array pointed to by wTilesetAnim.
@@ -260,6 +250,9 @@ DoneTileAnimation:
 ; Reset the animation command loop.
 	xor a
 	ldh [hTileAnimFrame], a
+IF DEF(_DEBUG)
+	jp Function15ef
+ENDC
 
 WaitTileAnimation:
 ; Do nothing this frame.
@@ -774,6 +767,3 @@ WhirlpoolTiles1: INCBIN "gfx/tilesets/whirlpool/1.2bpp"
 WhirlpoolTiles2: INCBIN "gfx/tilesets/whirlpool/2.2bpp"
 WhirlpoolTiles3: INCBIN "gfx/tilesets/whirlpool/3.2bpp"
 WhirlpoolTiles4: INCBIN "gfx/tilesets/whirlpool/4.2bpp"
-
-TilesetAnims_DummyFunction: ; unreferenced
-	ret

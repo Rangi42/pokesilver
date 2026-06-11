@@ -23,5 +23,10 @@ PlaceWaitingText::
 .Waiting:
 	db "つうしんたいきちゅう！@"
 
-DummyPredef1:
+DebugMenu:
+IF DEF(_DEBUG)
+	farcall _DebugMenu
+	jp StartTitleScreen
+ELSE
 	ret
+ENDC

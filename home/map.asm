@@ -1346,6 +1346,11 @@ CallScript::
 	ld a, h
 	ld [wScriptPos + 1], a
 
+IF DEF(_DEBUG)
+	call CheckScriptPointer
+	jp c, HandleInvalidScript
+ENDC
+
 	ld a, PLAYEREVENT_MAPSCRIPT
 	ld [wScriptRunning], a
 
@@ -1359,6 +1364,48 @@ CallMapScript::
 	ret nz
 	call GetMapScriptsBank
 	jr CallScript
+
+IF DEF(_DEBUG)
+HandleInvalidScript::
+	ld a, BANK(.script)
+	ld [wScriptBank], a
+	ld a, LOW(.script)
+	ld [wScriptPos], a
+	ld a, HIGH(.script)
+	ld [wScriptPos + 1], a
+
+	ld a, PLAYEREVENT_MAPSCRIPT
+	ld [wScriptRunning], a
+
+	scf
+	ret
+
+.script
+	jumptext .text_invalid
+
+.text_invalid
+	text "イベントが　おかしい！"
+	prompt
+
+; set carry if the script pointer at hl is invalid
+; valid addresses are in ROM, WRAM, SRAM
+CheckScriptPointer:
+	ld a, h
+	cp HIGH(vTiles0)
+	jr c, .valid
+	cp HIGH(sScratch)
+	jr c, .invalid
+	cp $e0 ; start of Echo RAM
+	jr nc, .invalid
+
+.valid
+	xor a
+	ret
+
+.invalid
+	scf
+	ret
+ENDC
 
 RunMapCallback::
 ; Will run the first callback found with execution index equal to a.

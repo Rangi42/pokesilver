@@ -5153,6 +5153,13 @@ MoveSelectionScreen:
 	cp LINK_COLOSSEUM
 	jr z, .okay
 	ld b, PAD_DOWN | PAD_UP | PAD_A | PAD_B | PAD_SELECT
+IF DEF(_DEBUG)
+	ld a, [wDebugFlags]
+	bit DEBUG_BATTLE_F, a
+	jr z, .okay
+	ld b, $ff
+	ld c, $2f
+ENDC
 
 .okay
 	ld a, b
@@ -5175,6 +5182,11 @@ MoveSelectionScreen:
 	jr .interpret_joypad
 
 .battle_player_moves
+IF DEF(_DEBUG)
+	ld a, [wDebugFlags]
+	bit DEBUG_BATTLE_F, a
+	jr nz, .interpret_joypad
+ENDC
 	call MoveInfoBox
 	ld a, [wSwappingMove]
 	and a
@@ -5195,6 +5207,21 @@ MoveSelectionScreen:
 	jp nz, .pressed_down
 	bit B_PAD_SELECT, a
 	jp nz, .pressed_select
+IF DEF(_DEBUG)
+	ld b, a
+	ld a, [wDebugFlags]
+	bit DEBUG_BATTLE_F, a
+	ld a, b
+	jr z, .asm_3e41d
+	bit B_PAD_START, a
+	jp nz, .asm_3e4b4
+	bit B_PAD_RIGHT, a
+	jp nz, .asm_3e4e3
+	bit B_PAD_LEFT, a
+	jp nz, .asm_3e4dd
+.asm_3e41d
+ENDC
+
 	bit B_PAD_B, a
 	; A button
 	push af
@@ -5291,6 +5318,58 @@ MoveSelectionScreen:
 	ld [wMenuCursorY], a
 	jp .menu_loop
 
+IF DEF(_DEBUG)
+.asm_3e4b4:
+	bit B_PAD_START, a
+	ld a, 0
+	jr nz, .asm_3e4bc
+	ld a, 1
+.asm_3e4bc
+	ldh [hBattleTurn], a
+	call SafeLoadTempTilemapToTilemap
+	call .asm_3e4f0
+	ld a, [wUnusedPlayerLockedMove]
+	and a
+	jp z, MoveSelectionScreen
+	ld [wFXAnimID], a
+	xor a
+	ld [wBattleAfterAnim], a
+	ld [wFXAnimID + 1], a
+	predef PlayBattleAnim
+	jp MoveSelectionScreen
+
+.asm_3e4dd:
+	ld a, [wUnusedPlayerLockedMove]
+	dec a
+	jr .asm_3e4e7
+
+.asm_3e4e3:
+	ld a, [wUnusedPlayerLockedMove]
+	inc a
+.asm_3e4e7
+	ld [wUnusedPlayerLockedMove], a
+	call .asm_3e4f0
+	jp MoveSelectionScreen
+
+.asm_3e4f0:
+	hlcoord 10, 16
+	lb bc, 2, 10
+	call ClearBox
+	hlcoord 10, 17
+	ld de, wUnusedPlayerLockedMove
+	lb bc, PRINTNUM_LEADINGZEROS | 1, 3
+	call PrintNum
+	ld a, [wUnusedPlayerLockedMove]
+	and a
+	ret z
+	cp NUM_ATTACKS + 1
+	ret nc
+	ld [wNamedObjectIndex], a
+	call GetMoveName
+	hlcoord 13, 17
+	jp PlaceString
+ENDC
+
 .CheckPlayerHasUsableMoves:
 	ld a, STRUGGLE
 	ld [wCurPlayerMove], a
@@ -5339,6 +5418,11 @@ MoveSelectionScreen:
 	ret
 
 .pressed_select
+IF DEF(_DEBUG)
+	ld a, [wDebugFlags]
+	bit DEBUG_BATTLE_F, a
+	jp nz, .asm_3e4b4
+ENDC
 	ld a, [wSwappingMove]
 	and a
 	jr z, .start_swap
@@ -7921,6 +8005,11 @@ InitEnemyWildmon:
 	ld a, WILD_BATTLE
 	ld [wBattleMode], a
 	call LoadEnemyMon
+IF DEF(_DEBUG)
+	ld a, [wDebugFlags]
+	bit DEBUG_BATTLE_F, a
+	call nz, FillEnemyMovesFromMoveIndicesBuffer
+ENDC
 	ld hl, wEnemyMonMoves
 	ld de, wWildMonMoves
 	ld bc, NUM_MOVES
@@ -7950,7 +8039,7 @@ InitEnemyWildmon:
 	predef PlaceGraphic
 	ret
 
-FillEnemyMovesFromMoveIndicesBuffer: ; unreferenced
+FillEnemyMovesFromMoveIndicesBuffer: ; unreferenced except in _DEBUG builds
 	ld hl, wEnemyMonMoves
 	ld de, wListMoves_MoveIndicesBuffer
 	ld b, NUM_MOVES

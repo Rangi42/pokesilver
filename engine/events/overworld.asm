@@ -36,6 +36,10 @@ GetPartyNickname:
 CheckEngineFlag:
 ; Check engine flag de
 ; Return carry if flag is not set
+IF DEF(_DEBUG)
+	call CheckFieldDebug
+	jr nz, .isset
+ENDC
 	ld b, CHECK_FLAG
 	farcall EngineFlagAction
 	ld a, c

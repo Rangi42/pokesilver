@@ -43,6 +43,10 @@ DoPlayerMovement::
 	jr z, .Ice
 
 .Normal:
+IF DEF(_DEBUG)
+	call .DebugMovement
+	ret c
+ENDC
 	call .CheckForced
 	call .GetAction
 	call .CheckTile
@@ -58,6 +62,10 @@ DoPlayerMovement::
 	jr .NotMoving
 
 .Surf:
+IF DEF(_DEBUG)
+	call .DebugMovement
+	ret c
+ENDC
 	call .CheckForced
 	call .GetAction
 	call .CheckTile
@@ -69,6 +77,10 @@ DoPlayerMovement::
 	jr .NotMoving
 
 .Ice:
+IF DEF(_DEBUG)
+	call .DebugMovement
+	ret c
+ENDC
 	call .CheckForced
 	call .GetAction
 	call .CheckTile
@@ -109,6 +121,38 @@ DoPlayerMovement::
 	call .StandInPlace
 	xor a
 	ret
+
+IF DEF(_DEBUG)
+.DebugMovement:
+	call CheckBPressedDebug
+	jr z, .Regular
+	call .GetAction
+	ld a, [wWalkingDirection]
+	cp STANDING
+	jr z, .DebugStanding
+	ld a, [wWalkingTileCollision]
+	cp COLL_FF
+	jr z, .DebugStanding
+	ld a, STEP_BIKE
+	call .DoStep
+	scf
+	ret
+
+.DebugStanding:
+	call .DebugStandInPlace
+	scf
+	ret
+
+.asm_100e5: ; unreferenced
+	ld a, STEP_BACK_LEDGE
+	call .DoStep
+	scf
+	ret
+
+.Regular:
+	xor a
+	ret
+ENDC
 
 .CheckTile:
 ; Tiles such as waterfalls and warps move the player
@@ -517,6 +561,9 @@ DoPlayerMovement::
 .StandInPlace:
 	ld a, 0
 	ld [wPlayerTurningDirection], a
+IF DEF(_DEBUG)
+.DebugStandInPlace:
+ENDC
 	ld a, movement_step_sleep
 	ld [wMovementAnimation], a
 	xor a

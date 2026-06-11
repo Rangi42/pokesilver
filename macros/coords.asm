@@ -68,6 +68,24 @@ MACRO? lda_coord
 	endc
 ENDM
 
+MACRO? ldbgcoord_a
+; x, y[, origin]
+	if _NARG < 3
+		ld [(\2) * TILEMAP_WIDTH + (\1) + vBGMap0], a
+	else
+		ld [(\2) * TILEMAP_WIDTH + (\1) + \3], a
+	endc
+ENDM
+
+MACRO? lda_bgcoord
+; x, y[, origin]
+	if _NARG < 3
+		ld a, [(\2) * TILEMAP_WIDTH + (\1) + vBGMap0]
+	else
+		ld a, [(\2) * TILEMAP_WIDTH + (\1) + \3]
+	endc
+ENDM
+
 MACRO? menu_coords
 ; x1, y1, x2, y2
 	db \2, \1 ; start coords

@@ -352,3 +352,50 @@ pushc
 	endr
 	charmap "@", $ff ; string terminator
 popc
+
+; Debug charmap, for Toolgear (see engine/debug/toolgear.asm)
+; gfx/debug/weekday_kanji.png
+IF DEF(_DEBUG)
+pushc
+	newcharmap toolgear
+	charmap "０", $66
+	charmap "１", $67
+	charmap "２", $68
+	charmap "３", $69
+	charmap "４", $6a
+	charmap "５", $6b
+	charmap "６", $6c
+	charmap "７", $6d
+	charmap "８", $6e
+	charmap "９", $6f
+	; if debug coords shown
+	charmap "Ａ", $70
+	charmap "Ｂ", $71
+	charmap "Ｃ", $72
+	charmap "Ｄ", $73
+	charmap "Ｅ", $74
+	charmap "Ｆ", $75
+	; small kana aren't actively loaded
+
+	; if clock shown
+	charmap "：", $70
+	charmap "日", $71
+	charmap "月", $72
+	charmap "火", $73
+	charmap "水", $74
+	charmap "木", $75
+	charmap "金", $76
+	charmap "土", $77
+	charmap "⚡", $78 ; power
+	charmap "☎", $79 ; mobile
+
+	; active frame
+	charmap "┌", $79 ; only if debug coords shown
+	charmap "─", $7a
+	charmap "┐", $7b
+	charmap "│", $7c
+	charmap "└", $7d
+	charmap "┘", $7e
+	charmap "　", $7f
+popc
+ENDC

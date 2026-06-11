@@ -195,6 +195,9 @@ HandleMapTimeAndJoypad:
 
 	call UpdateTime
 	call GetJoypad
+IF DEF(_DEBUG)
+	farcall Debug_UpdateToolgear
+ENDC
 	call TimeOfDayPals
 	ret
 
@@ -207,6 +210,9 @@ HandleMapObjects:
 HandleMapBackground:
 	farcall _UpdateSprites
 	farcall ScrollScreen
+IF DEF(_DEBUG)
+	call Function1e76
+ENDC
 	ret
 
 CheckPlayerState:
@@ -278,6 +284,10 @@ PlayerEvents:
 CheckTrainerEvent:
 	nop
 	nop
+IF DEF(_DEBUG)
+	call CheckBPressedDebug
+	jr nz, .nope
+ENDC
 	call CheckTrainerBattle
 	jr nc, .nope
 
@@ -302,6 +312,10 @@ CheckTileEvent:
 	jr c, .warp_tile
 
 .connections_disabled
+IF DEF(_DEBUG)
+	call CheckBPressedDebug
+	jr nz, .ok
+ENDC
 	call CheckCoordEventsEnabled
 	jr z, .coord_events_disabled
 
@@ -601,20 +615,36 @@ ObjectEventTypeArray:
 	ret
 
 .three
+IF DEF(_DEBUG)
+	jp HandleInvalidScript
+ELSE
 	xor a
 	ret
+ENDC
 
 .four
+IF DEF(_DEBUG)
+	jp HandleInvalidScript
+ELSE
 	xor a
 	ret
+ENDC
 
 .five
+IF DEF(_DEBUG)
+	jp HandleInvalidScript
+ELSE
 	xor a
 	ret
+ENDC
 
 .six
+IF DEF(_DEBUG)
+	jp HandleInvalidScript
+ELSE
 	xor a
 	ret
+ENDC
 
 TryBGEvent:
 	call CheckFacingBGEvent
@@ -811,6 +841,18 @@ CheckMenuOW:
 	bit B_PAD_START, a
 	jr z, .NoMenu
 
+IF DEF(_DEBUG)
+	call CheckBPressedDebug
+	jr z, .StartMenu
+	call PlayTalkObject
+	ld a, BANK(FieldDebugMenuScript)
+	ld hl, FieldDebugMenuScript
+	call CallScript
+	scf
+	ret
+
+.StartMenu
+ENDC
 	ld a, BANK(StartMenuScript)
 	ld hl, StartMenuScript
 	call CallScript
@@ -836,6 +878,12 @@ StartMenuScript:
 SelectMenuScript:
 	callasm SelectMenu
 	sjump SelectMenuCallback
+
+IF DEF(_DEBUG)
+FieldDebugMenuScript:
+	callasm FieldDebugMenu
+	sjump SelectMenuCallback
+ENDC
 
 StartMenuCallback:
 SelectMenuCallback:
@@ -1153,6 +1201,9 @@ RandomEncounter::
 .done
 	call CallScript
 	scf
+IF DEF(_DEBUG)
+	call Function97b85
+ENDC
 	ret
 
 WildBattleScript:
@@ -1160,6 +1211,21 @@ WildBattleScript:
 	startbattle
 	reloadmapafterbattle
 	end
+
+IF DEF(_DEBUG)
+Function97b85:
+	push af
+	ld hl, wd91d
+	ld d, [hl]
+	inc hl
+	ld e, [hl]
+	inc de
+	ld [hl], e
+	dec hl
+	ld [hl], d
+	pop af
+	ret
+ENDC
 
 CanEncounterWildMon::
 	ld hl, wStatusFlags
