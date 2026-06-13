@@ -542,7 +542,8 @@ PokegearMap_CheckRegion:
 .johto
 	ld a, POKEGEARSTATE_JOHTOMAPINIT
 	jr .done
-	ret
+
+	ret ; unreferenced
 
 .kanto
 	ld a, POKEGEARSTATE_KANTOMAPINIT

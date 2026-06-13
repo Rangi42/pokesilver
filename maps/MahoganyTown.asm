@@ -121,10 +121,9 @@ MahoganyGymSign:
 MahoganyTownPokecenterSign:
 	jumpstd PokecenterSignScript
 
-MahoganyTownCollideDownFaceLeftMovement: ; unreferenced
-	step DOWN
-	big_step UP
-	turn_head DOWN
+MahoganyTownMartSign: ; unreferenced
+	jumpstd MartSignScript
+
 MahoganyTownPlayerStepLeftMovement:
 	step LEFT
 	step_end
@@ -147,7 +146,7 @@ RageCandyBarMerchantTryOneText:
 	line "いかりまんじゅう<WO>かうのが"
 	cont "たび<NO>じょうしき　<TTE>もんだ"
 
-	para "いまなら　たった<NO>３００円"
+	para "いまなら　たった<NO>{d:MAHOGANYTOWN_RAGECANDYBAR_PRICE}円"
 	line "どう　かうでしょ？"
 	done
 
